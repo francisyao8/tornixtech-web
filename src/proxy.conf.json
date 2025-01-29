@@ -1,0 +1,20 @@
+{
+    "/api/*": {
+        "target": "https://tornixtech.com/",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "router": {
+            "localhost:4200" : "https://tornixtech.com/"
+        }
+    },
+    "/oauth/*": {
+        "target": "https://tornixtech.com/",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "router": {
+            "localhost:4200" : "https://tornixtech.com/"
+        }
+    }         
+}
