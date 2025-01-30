@@ -4,7 +4,6 @@ import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 
@@ -17,7 +16,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'about-us', component: AboutComponent },
       { path: 'contact-us', component: ContactUsComponent},
-      { path: 'products', component: ProductsComponent },
+      { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
       { path: 'services', component: ServicesComponent },
       { path: 'team', component: TeamComponent },
     ]
