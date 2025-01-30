@@ -1,0 +1,57 @@
+ <!-- Page Title -->
+ <div class="page-title dark-background">
+    <div class="container position-relative">
+      <h1>All Products</h1>
+      <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">All Products</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio section">
+
+    <div class="container">
+
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <!-- <li data-filter=".filter-app">App</li>
+          <li data-filter=".filter-product">Product</li>
+          <li data-filter=".filter-branding">Branding</li>
+          <li data-filter=".filter-books">Books</li> -->
+        </ul><!-- End Portfolio Filters -->
+
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div *ngFor="let product of all_products" class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="portfolio-content h-100">
+                  <img [src]="product.product_link" class="img-fluid" alt="{{ product.product_label }}">
+                  <div class="portfolio-info">
+                    <!-- <h4>{{ product.product_label }}</h4> -->
+                    <p class="product-label">{{product.product_label}}</p>
+                    <a [href]="product.product_link" title="{{ product.product_label }}" 
+                       data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a [routerLink]="['/main/products/product-details', product.product_id]" title="More Details" class="details-link">
+                        <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+
+
+        </div><!-- End Portfolio Container -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Portfolio Section -->
