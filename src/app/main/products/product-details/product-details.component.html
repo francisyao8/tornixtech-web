@@ -44,22 +44,27 @@
       </div>
 
       <!-- Product Info Section -->
-      <div class="col-lg-4">
-        <div *ngIf="product">
-          <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-            <h3>{{ product.product_label }}</h3>
-            <ul>
-              <li><strong>Category</strong>: {{ product.categorie }}</li>
-              <li><strong>Project URL</strong>: <a [href]="product.product_website" target="_blank">{{ product.product_website }}</a></li>
-            </ul>
-          </div>
-          
-          <!-- Product Description Section -->
-          <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-            <p>{{ product.product_description }}</p>
-          </div>
-        </div>
-      </div>
+      <!-- Product Info Section -->
+<div class="col-lg-4">
+  <div *ngIf="product">
+    <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+      <h3>{{ product.product_label }}</h3>
+      <ul>
+        <li><strong>Category</strong>: {{ product.categorie }}</li>
+        <!-- Afficher seulement si le site Web existe -->
+        <li *ngIf="product.product_website"><strong>Project URL</strong>: 
+          <a [href]="product.product_website" target="_blank">{{ product.product_website }}</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Product Description Section -->
+    <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+      <p>{{ product.product_description }}</p>
+    </div>
+  </div>
+</div>
+
 
     </div>
   </div>
