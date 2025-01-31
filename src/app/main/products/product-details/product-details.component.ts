@@ -64,7 +64,7 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-vendigo-007',
       product_label: 'VendiGo',
-      product_link: './assets/img/logo-tornixtech/vendigo-logo.png',
+      product_link: './assets/img/logo-tornixtech/vendigo-logo.jpeg',
       product_description: 'VendiGo is a powerful SaaS-based e-commerce platform built with Angular and Flask, providing businesses with all the tools needed to establish and manage their online stores. From customizable storefronts to advanced payment integrations, VendiGo simplifies e-commerce operations, offering a scalable solution that caters to startups and large enterprises alike.',
       categorie: 'E-commerce Platforms',
       product_website: ''
@@ -72,7 +72,7 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-polisure-008',
       product_label: 'PoliSure',
-      product_link: './assets/img/logo-tornixtech/polisure-logo.png',
+      product_link: './assets/img/logo-tornixtech/polisure-logo.jpeg',
       product_description: 'PoliSure is an upcoming insurance marketplace designed to simplify the process of buying insurance policies. It connects users with trusted insurers, offering tailored plans based on individual needs. With an intuitive comparison tool, transparent pricing, and easy policy management, PoliSure ensures that users can secure coverage with confidence and convenience.',
       categorie: 'Insurance',
       product_website: ''
@@ -80,7 +80,7 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-onixmail-009',
       product_label: 'OnixMail',
-      product_link: './assets/img/logo-tornixtech/onixmail-logo.png',
+      product_link: './assets/img/logo-tornixtech/nixmail-logo.jpeg',
       product_description: 'OnixMail is TornixTech’s proprietary email solution, offering a secure and professional communication platform. Built with reliability and efficiency in mind, it ensures high email deliverability, spam filtering, and encrypted messaging. Whether for business or personal use, OnixMail provides a seamless experience, integrating with major productivity tools to enhance collaboration.',
       categorie: 'Communication',
       product_website: ''
@@ -88,7 +88,7 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-trackam-010',
       product_label: 'Trackam',
-      product_link: './assets/img/logo-tornixtech/trackam-logo.png',
+      product_link: './assets/img/logo-tornixtech/trackam-logo.jpeg',
       product_description: 'Trackam is a robust achievement tracking platform designed to help individuals and teams stay on top of their goals. Whether managing personal growth, business milestones, or team performance, Trackam provides an intuitive dashboard with progress tracking, reminders, and analytics. It serves as an essential tool for boosting productivity and ensuring accountability.',
       categorie: 'Productivity & Goals',
       product_website: ''
@@ -96,7 +96,7 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-emotiq-011',
       product_label: 'Emotiq',
-      product_link: './assets/img/logo-tornixtech/emotiq-logo.png',
+      product_link: './assets/img/logo-tornixtech/emotiq-logo.jpeg',
       product_description: 'Emotiq is a modern review management system that enables businesses to gather instant customer feedback through emoji-based ratings. Instead of lengthy reviews, users can express satisfaction or dissatisfaction with a single click, streamlining the feedback process. Businesses can analyze customer sentiment in real time, helping them improve services and enhance customer satisfaction.',
       categorie: 'Customer Feedback & Reviews',
       product_website: ''
