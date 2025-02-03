@@ -1,0 +1,22 @@
+.portfolio-details .portfolio-details-slider img {
+    width: 70%;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    position: relative;
+    left: 25%;
+}
+
+.portfolio-info{
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
