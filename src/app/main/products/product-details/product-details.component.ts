@@ -25,7 +25,7 @@ export class ProductDetailsComponent implements OnInit{
       product_id: 't-keletcik-002',
       product_label: 'Keletcik',
       product_link: './assets/img/logo-tornixtech/keletick-logo.png',
-      product_description: 'Keletick Mobile is a dynamic mobile application designed to organize and present categorized content efficiently. Whether it’s articles, videos, or other forms of media, the platform ensures a seamless browsing experience. With a well-structured UI, search capabilities, and personalized recommendations, users can easily access relevant content tailored to their interests.',
+       product_description: 'Keletick Mobile is a dynamic mobile application designed to organize and present categorized content efficiently. Whether it’s articles, videos, or other forms of media, the platform ensures a seamless browsing experience. With a well-structured UI, search capabilities, and personalized recommendations, users can easily access relevant content tailored to their interests.',
       categorie: 'Mobile Applications',
       product_website: 'https://keletick.ci/fr/main/home'
     },
@@ -103,8 +103,8 @@ export class ProductDetailsComponent implements OnInit{
     }
   ];
   productId: any;
-  
-  
+
+
   constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {
