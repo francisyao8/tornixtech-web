@@ -25,7 +25,6 @@ export class AllProductsComponent implements OnInit{
     { product_id: 't-trackam-0010', product_label: 'Trackam', product_description: 'A feed management system similar to Beezup, designed to improve e-commerce feed handling.', },
     { product_id: 't-emotiq-0011', product_label: 'Emotiq', product_description: 'A feed management system similar to Beezup, designed to improve e-commerce feed handling.', },
 
-
   ];
   
   
