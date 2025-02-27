@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactService } from '../../services/contact/contact.service';
+import { ContactService } from '../services/contact/contact.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -37,6 +37,8 @@ export class ContactUsComponent {
       message: this.formdata.get("message")?.value || '',
     };
 
+    console.log('Data sent:', this.formdata.value);
+    
     this.contactService.SendMail(formData).subscribe({
       next:(res:any)=> {
         console.log("Message sent successfully :", res);
