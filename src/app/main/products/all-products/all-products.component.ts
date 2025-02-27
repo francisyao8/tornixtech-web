@@ -13,7 +13,7 @@ export class AllProductsComponent implements OnInit{
 
   all_products = [
     { product_id: 't-cashdash-001', product_label: 'Cashdash', product_link: './assets/img/logo-tornixtech/cashdash-logo.jpeg', product_description: 'A money transfer platform with push notifications and transaction tracking.', },
-    { product_id: 't-keletcik-002', product_label: 'Keletcik', product_link: './assets/img/logo-tornixtech/keletick-logo.png', product_description: 'A mobile application that includes categorized content (still in development).', },
+    { product_id: 't-keletcik-002', product_label: 'Keletcik', product_link: './assets/img/logo-tornixtech/keletick-logo.png', product_description: 'A mobile application that includes categorized content.', },
     { product_id: 't-goparadize-003', product_label: 'Goparadize', product_link: './assets/img/logo-tornixtech/goparadize-logo.png', product_description: 'A platform similar to Airbnb for booking accommodations.', },
     { product_id: 't-flotys-004', product_label: 'Flotys', product_link: './assets/img/logo-tornixtech/flotys-logo.jpeg', product_description: 'A mobile app for car tracking with an interactive map and necessary vehicle monitoring features.', },
     { product_id: 't-flowhub-005', product_label: 'Flowhub', product_link: './assets/img/logo-tornixtech/flowhub-logo.jpeg', product_description: 'A transaction partner system similar to Hub2 for managing payouts.', },
