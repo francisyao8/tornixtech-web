@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class ContactService {
 
   apiUrl = environment.apiUrl;
 
-  // private apiUrl = 'http://127.0.0.1:5000/CreateCompany';
+  // private apiUrl = 'http://127.0.0.1:5000/contact_us';
 
   constructor(private http: HttpClient,) { }
 

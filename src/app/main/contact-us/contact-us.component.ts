@@ -36,8 +36,6 @@ export class ContactUsComponent {
       subject: this.formdata.get("subject")?.value || '',
       message: this.formdata.get("message")?.value || '',
     };
-
-    console.log('Data sent:', this.formdata.value);
     
     this.contactService.SendMail(formData).subscribe({
       next:(res:any)=> {

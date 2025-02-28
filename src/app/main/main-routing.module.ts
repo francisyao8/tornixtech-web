@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
+import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
       { path: 'services', component: ServicesComponent },
       { path: 'team', component: TeamComponent },
+      { path: 'news', component: NewsComponent },
     ]
   }
 ];
