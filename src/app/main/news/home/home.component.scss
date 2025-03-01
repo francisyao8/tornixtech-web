@@ -1,0 +1,15 @@
+.btn-custom-outline-primary {
+    color: #1e4356;
+    border-color: #1e4356;
+    background-color: transparent;
+    border: 2px solid #1e4356;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-custom-outline-primary:hover {
+    background-color: #1e4356;
+    color: white;
+}

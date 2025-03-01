@@ -12,5 +12,7 @@ export const routes: Routes = [
     { path: 'contact-us', component: ContactUsComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'services', component: ServicesComponent }, // Ajout de la route service
-    { path: 'team', component: TeamComponent }
+    { path: 'team', component: TeamComponent },
+    // { path: 'news', loadChildren: () => import('./main/news/news.module').then(m => m.NewsModule) },
+
 ];
