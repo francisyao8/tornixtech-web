@@ -113,8 +113,8 @@ export class ProductDetailsComponent implements OnInit{
       product_id: 't-bluebus-013',
       product_label: 'BLUEBUS',
       product_link: './assets/img/logo-tornixtech/bluebus-logo.jpeg',
-      product_description: '.',
-      categorie: '...',
+      product_description: 'BlueBus is a modern and user-friendly platform that allows travelers to search, compare, and purchase bus tickets online with ease. Designed to simplify transportation bookings, BlueBus connects users with reliable bus operators, offering seamless reservations and secure payment options.',
+      categorie: 'Your Smart Ticketing Solution for Bus Travel',
       product_website: ''
     }
   ];

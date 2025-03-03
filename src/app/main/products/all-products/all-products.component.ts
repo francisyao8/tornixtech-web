@@ -29,7 +29,7 @@ export class AllProductsComponent implements OnInit{
     
     { product_id: 't-my-assets-012', product_label: 'My Assets', product_link: './assets/img/logo-tornixtech/my-assets-logo.jpeg', product_description: 'My Assets is designed to democratize stock market access by making investment management easy, secure, and efficient.', },
     
-    { product_id: 't-bluebus-013', product_label: 'BLUEBUS', product_link: './assets/img/logo-tornixtech/bluebus-logo.jpeg', product_description: '...', },
+    { product_id: 't-bluebus-013', product_label: 'BLUEBUS', product_link: './assets/img/logo-tornixtech/bluebus-logo.jpeg', product_description: 'Whether you\'re commuting daily or planning a long journey, BlueBus ensures a smooth and efficient ticketing experience.', },
 
   ];
   
