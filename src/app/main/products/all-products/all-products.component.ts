@@ -26,6 +26,8 @@ export class AllProductsComponent implements OnInit{
     
     { product_id: 't-trackam-010', product_label: 'Trackam', product_link: './assets/img/logo-tornixtech/trackam-logo.jpeg', product_description: 'A feed management system similar to Beezup, designed to improve e-commerce feed handling.', },
     { product_id: 't-emotiq-011', product_label: 'Emotiq', product_link: './assets/img/logo-tornixtech/emotiq-logo.jpeg',  product_description: 'A feed management system similar to Beezup, designed to improve e-commerce feed handling.', },
+    
+    { product_id: 't-my-assets-012', product_label: 'My Assets', product_link: './assets/img/logo-tornixtech/my-assets-logo.jpeg', product_description: 'My Assets is designed to democratize stock market access by making investment management easy, secure, and efficient.', },
 
   ];
   

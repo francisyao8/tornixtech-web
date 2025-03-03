@@ -100,6 +100,15 @@ export class ProductDetailsComponent implements OnInit{
       product_description: 'Emotiq is a modern review management system that enables businesses to gather instant customer feedback through emoji-based ratings. Instead of lengthy reviews, users can express satisfaction or dissatisfaction with a single click, streamlining the feedback process. Businesses can analyze customer sentiment in real time, helping them improve services and enhance customer satisfaction.',
       categorie: 'Customer Feedback & Reviews',
       product_website: ''
+    },
+
+    {
+      product_id: 't-my-assets-012',
+      product_label: 'My Assets',
+      product_link: './assets/img/logo-tornixtech/my-assets-logo.jpeg',
+      product_description: 'My Assets is a digital platform under TornixTech that allows users to manage their stock investments seamlessly. The platform enables individuals to open a brokerage account remotely, purchase stocks, and track their investments online.',
+      categorie: 'Online Stock Investment Management Platform',
+      product_website: ''
     }
   ];
   productId: any;
