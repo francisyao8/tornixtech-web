@@ -101,13 +101,20 @@ export class ProductDetailsComponent implements OnInit{
       categorie: 'Customer Feedback & Reviews',
       product_website: ''
     },
-
     {
       product_id: 't-my-assets-012',
       product_label: 'My Assets',
       product_link: './assets/img/logo-tornixtech/my-assets-logo.jpeg',
       product_description: 'My Assets is a digital platform under TornixTech that allows users to manage their stock investments seamlessly. The platform enables individuals to open a brokerage account remotely, purchase stocks, and track their investments online.',
       categorie: 'Online Stock Investment Management Platform',
+      product_website: ''
+    },
+    {
+      product_id: 't-bluebus-013',
+      product_label: 'BLUEBUS',
+      product_link: './assets/img/logo-tornixtech/bluebus-logo.jpeg',
+      product_description: '.',
+      categorie: '...',
       product_website: ''
     }
   ];
