@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-news',
-  standalone: true,
   imports: [RouterModule, CommonModule, ReactiveFormsModule],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'
