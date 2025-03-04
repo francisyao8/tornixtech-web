@@ -16,21 +16,22 @@ import { JoinUsComponent } from './join-us/join-us.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-   
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
-    // { path: 'blog', component: BlogComponent },
-    { path: 'blog-post', component: BlogPostComponent },
-    { path: 'blog-post-details', component: BlogPostDetailsComponent },
     { path: 'categories', component: CategoriesComponent },
     { path: 'activities', component: ActivitiesComponent },
-    { path: 'news', component: NewsComponent },
+    // { path: 'news', component: NewsComponent },
     { path: 'partnerships', component: PartnershipsComponent },
     { path: 'testimonials', component: TestimonialsComponent },
     { path: 'resources-and-documentation', component: ResourcesAndDocumentationComponent },
     { path: 'frequently-asked-questions', component: FrequentlyAskedQuestionsComponent },
     { path: 'contact-us', component: ContactUsComponent },
+    
     { path: 'join-us', component: JoinUsComponent },
+    { 
+      path: 'blog-post', 
+      loadChildren: () => import('./blog-post/blog-post.module').then(m => m.BlogPostModule) 
+    }
 ];
 
 @NgModule({

@@ -16,5 +16,11 @@
         "router": {
             "localhost:4200" : "https://tornixtech.com/"
         }
-    }         
+    },
+    "/wp-json": {
+    "target": "https://insights.tornixtech.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }         
 }
