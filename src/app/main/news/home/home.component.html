@@ -31,16 +31,12 @@
             <div class="col-lg-8">
                 <!-- Blog item retrieved from: https://insights.tornixtech.com/  -->
                 <div *ngFor="let post of news" class="card mb-4 rounded-3 shadow-sm border-0">
-                    <!-- <div class="overflow-hidden rounded-3">
-                        <img [src]="post.featured_media_url" class="card-img-top" alt="{{ post.title.rendered }}"
-                            style="width: 100%; height: auto;">
-                    </div> -->
+                    
                     <div class="card-body p-4">
                         <a [routerLink]="['/main/news/blog-post/blog-post-details']">
                             <h5 class="fw-bold mb-3">Technology</h5>
                         </a>
                         <div class="blog-post">
-                            <!-- <img [src]="post.featured_media_url" alt="{{ post.title.rendered }}"> -->
                             <h3 class="fw-bold">{{ post.title.rendered }}</h3>
                             <p class="text-secondary" [innerHTML]="post.excerpt.rendered"></p>
                             <br>
@@ -57,58 +53,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <nav>
-                                <a routerLink="/article">Voir l'article</a>
-                            </nav>
                         </div>
                     </div>
                 </div>
-                <!-- /Blog item retrieved from: https://insights.tornixtech.com/  -->
-
-
-                <div *ngFor="let news of all_news" class="card mb-4 rounded-3 shadow-sm border-0">
-                    <div class="overflow-hidden rounded-3">
-                        <img [src]="news.news_img" class="card-img-top" alt="Tech Image"
-                            style="width: 100%; height: auto;">
-                    </div>
-                    <div class="card-body p-4">
-                        <h2 class="fw-bold">
-                            <a [routerLink]="['/main/news/blog-post/blog-post-details', news.news_id]">
-                                {{ news.news_label }}
-                            </a>
-                        </h2>
-                        <p class="text-secondary">{{ news.news_content }}</p>
-
-                        <br>
-
-                        <div class="text-secondary mb-2 small">
-                            <span class="bi-person me-1"></span> {{ news.news_authors }}
-                            <span class="bi-calendar ms-2 me-1"></span> {{ news.news_periode }}
-                            <span class="bi-chat ms-2 me-1"></span> {{ news.news_comments }}
-                            <!-- <p class="bi-chat ms-2 me-1"><strong> Commentaires :</strong> {{ news.news_comments }}</p> -->
-                        </div>
-
-                        <!-- <div *ngIf="news">
-                            <h1>{{ news.news_label }}</h1>
-                            <p>{{ news.news_content }}</p>
-                            <p><strong>Commentaires:</strong> {{ news.comments }}</p>
-                        </div> -->
-
-                        <br>
-
-                        <div class="d-flex mb-3 justify-content-end">
-                            <div class="ms-auto">
-                                <!-- <a [routerLink]="['/main/news/blog-post/all-blog-post']" class="btn btn-custom-outline-primary btn-sm">Read more</a> -->
-                                <a [routerLink]="['/main/news/blog-post/blog-post-details']"
-                                    class="btn btn-custom-outline-primary btn-sm">Read more</a>
-
-                                <!-- <a [routerLink]="['/main/news/blog-post/all-blog-post', news.n_id]" class="btn btn-custom-outline-primary btn-sm">Read more</a> -->
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!-- /News and post -->
-
             </div>
 
             <div class="col-lg-4">
@@ -154,63 +101,47 @@
                     </div>
 
                     <hr>
-
                     <!--  -->
                     <div class="mt-4">
                         <h5 class="fw-bold mb-3">Recent post</h5>
-                        <!-- <div class="position-relative">
-                            <input type="text" class="form-control rounded-pill" placeholder="Search...">
-                            <button class="btn position-absolute top-0 end-0 h-100">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div> -->
                     </div> <!--  -->
-
                 </div>
 
+                <!-- Blog item retrieved from: https://insights.tornixtech.com/  -->
+                <div *ngFor="let post of news" class="card mb-4 rounded-3 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <a [routerLink]="['/main/news/blog-post/blog-post-details']">
+                            <h5 class="fw-bold mb-3">Technology</h5>
+                        </a>
+                        <div class="blog-post">
+                            <h3 class="fw-bold">{{ post.title.rendered }}</h3>
+                            <p class="text-secondary" [innerHTML]="post.excerpt.rendered"></p>
+                            <br>
 
-
-
-
-                <!--  -->
-                <div *ngFor="let news of all_news" class="card mb-3 rounded-3 shadow-sm border-0"
-                    style="border-radius: 10px;">
-                    <div class="row g-0">
-                        <div class="col-8">
-                            <div class="card-body">
-                                <div class="text-secondary small">
-                                    {{ news.news_authors }} on {{ news.news_periode }}
+                            <div class="text-secondary mb-2 small">
+                                <span class="bi-person me-1"> Author :</span>{{ post.author }}
+                                <span class="bi-calendar ms-2 me-1"> Published :</span> {{ post.date }}
+                            </div>
+                            <div class="d-flex mb-3 justify-content-end">
+                                <div class="ms-auto">
+                                    <a [routerLink]="['/main/news/blog-post/blog-post-details', post.id]"
+                                        class="btn btn-custom-outline-primary btn-sm">
+                                        Read more
+                                    </a>
                                 </div>
-                                <a [routerLink]="['/main/news/blog-post/blog-post-details', news.news_id]">
-                                    <h5 class="fw-bold">{{ news.news_label }}</h5>
-                                </a>
-
-                                <p class="text-secondary small">
-                                    {{ news.news_content | slice:0:100 }}
-                                </p>
-                                <!-- <div class="mt-2">
-                                    <span class="badge bg-light text-dark me-2">SPORT</span>
-                                    <span class="badge bg-light text-dark me-2">TRAVEL</span>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="h-100 overflow-hidden">
-                                <img [src]="news.news_img" class="img-fluid h-100 w-100 object-fit-cover"
-                                    alt="News Image">
                             </div>
                         </div>
                     </div>
                 </div>
-
-
+               
                 <!--  -->
-                <!-- <div class="card-body p-4">
+                <div class="card-body p-4">
                     <div class="d-flex mb-3">
-                        <span class="badge bg-danger me-2">BUSINESS</span>
+                        <span class="badge bg-danger me-2">POSTS</span>
                         <span class="badge bg-danger me-2">NEWS</span>
+                        <span class="badge bg-danger me-2">ARTICLES</span>
                     </div>
-                </div> -->
+                </div>
                 <!--  -->
                 <br><br>
 
@@ -224,10 +155,6 @@
                 </div>
             </div> -->
 
-            <div class="col-lg-4">
-                <!-- Section Profil -->
-                <!-- Autres sections (recherche, profil, etc.) -->
-            </div>
         </div>
     </div>
 </section><!-- /Blog Section -->

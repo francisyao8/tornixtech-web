@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { BlogService } from '../../../services/blog/blog.service';
 import { ArticleService } from '../../../services/article/article.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-blog-post-details',
@@ -102,6 +103,7 @@ export class BlogPostDetailsComponent implements OnInit{
   postContent: any;
 
   constructor(
+    private http: HttpClient,
     private route: ActivatedRoute,
     private blogService: BlogService,
     private articleService: ArticleService,
@@ -119,32 +121,38 @@ export class BlogPostDetailsComponent implements OnInit{
       this.news = this.all_news.find(news => news.news_id === this.newsId);
     });
 
-    const blogUrl = 'https://insights.tornixtech.com/wp-json/wp/v2/posts'; // URL du post WordPress
-    this.blogService.getBlogPostDetails(blogUrl).subscribe((htmlContent) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlContent, 'text/html');
-      const articleContent = doc.querySelector('article')?.innerHTML;
-      if (articleContent) {
-        this.postContent = articleContent;
-      } else {
-        this.postContent = 'Content not found';
+    this.route.params.subscribe(params => {
+      const slug = params['slug'];
+      this.getBlogPostDetails(slug);
+    });
+  }
+
+
+  getBlogPostDetails(slug: string): void {
+    const url = `https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=${slug}`;
+    this.http.get<any[]>(url).subscribe({
+      next: data => {
+        if (data.length > 0) {
+          this.blogPost = data[0];
+        } else {
+          this.error = 'Article non trouvé.';
+        }
+        this.loading = false;
+      },
+      error: err => {
+        this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
+        this.loading = false;
       }
     });
   }
+  
 
 
   // getBlogPostDetails(blogId: string): void {
   //   this.blogService.getBlogPostDetails(blogId).subscribe({
   //     next: (data) => {
-  //       const parser = new DOMParser();
-  //       const doc = parser.parseFromString(data, 'text/html');
-  //       const postContentElement = doc.querySelector('article#post-22');
-        
-  //       if (postContentElement) {
-  //         this.postContent = postContentElement.innerHTML;
-  //       } else {
-  //         this.postContent = 'Content not found';
-  //       }
+  //       console.log(data);  // Ajoutez un log pour vérifier les donn  ées
+  //       this.blogPost = data;
   //       this.loading = false;
   //     },
   //     error: (err) => {
@@ -153,22 +161,6 @@ export class BlogPostDetailsComponent implements OnInit{
   //     }
   //   });
   // }
-  
-
-
-  getBlogPostDetails(blogId: string): void {
-    this.blogService.getBlogPostDetails(blogId).subscribe({
-      next: (data) => {
-        console.log(data);  // Ajoutez un log pour vérifier les donn  ées
-        this.blogPost = data;
-        this.loading = false;
-      },
-      error: (err) => {
-        this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
-        this.loading = false;
-      }
-    });
-  }
 
   // getBlogPostDetails(blogId: string): void {
   //   this.blogService.getBlogPostDetails(blogId).subscribe({
