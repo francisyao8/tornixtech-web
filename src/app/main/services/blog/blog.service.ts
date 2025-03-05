@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class BlogService {
 
   private apiUrl = 'https://insights.tornixtech.com/wp-json/wp/v2/posts'; // URL de l'API REST de WordPress
+  private articles = 'https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=the-importance-of-custom-middleware-for-modern-app-development';
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +28,7 @@ export class BlogService {
   getBlogPostDetails(): Observable<any> {
     // const url = `https://insights.tornixtech.com/api/blog-post/${blogId}`; // Exemple d'URL pour récupérer un article spécifique
     // return this.http.get<any>(url);
-    return this.http.get(`https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=the-importance-of-custom-middleware-for-modern-app-development`);
+    return this.http.get(this.articles);
   }
 
 }

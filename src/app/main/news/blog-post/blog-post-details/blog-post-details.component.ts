@@ -119,18 +119,8 @@ export class BlogPostDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const newsId = params['b_id'];
-      // this.newsId = params['b_id'];
-
-      // this.getBlogPostDetails(newsId);
-
-      // Trouver le produit dans la liste en fonction de l'ID
       this.news = this.all_news.find(news => news.news_id === this.newsId);
     });
-
-    // this.route.params.subscribe(params => {
-    //   const slug = params['slug'];
-    //   this.getBlogPostDetails(slug);
-    // });
 
     this.blogService.getBlogPostDetails().subscribe(
       (response) => {
@@ -175,35 +165,6 @@ export class BlogPostDetailsComponent implements OnInit{
       }
     });
   }
-  
-
-
-  // getBlogPostDetails(blogId: string): void {
-  //   this.blogService.getBlogPostDetails(blogId).subscribe({
-  //     next: (data) => {
-  //       console.log(data);  // Ajoutez un log pour vérifier les donn  ées
-  //       this.blogPost = data;
-  //       this.loading = false;
-  //     },
-  //     error: (err) => {
-  //       this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
-  //       this.loading = false;
-  //     }
-  //   });
-  // }
-
-  // getBlogPostDetails(blogId: string): void {
-  //   this.blogService.getBlogPostDetails(blogId).subscribe({
-  //     next: (data) => {
-  //       this.blogPost = data;  // On assigne les données récupérées à la variable blogPost
-  //       this.loading = false;   // On arrête le chargement
-  //     },
-  //     error: (err) => {
-  //       this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
-  //       this.loading = false;
-  //     }
-  //   });
-  // }
 
   
 
