@@ -102,6 +102,12 @@ export class BlogPostDetailsComponent implements OnInit{
   newsId: string | null = null
   postContent: any;
 
+  fullContent: string = '';
+  postTitle: string = '';
+  publishDate: string = '';
+  featuredImage: string = '';
+  authorName: string = '';
+
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -115,16 +121,40 @@ export class BlogPostDetailsComponent implements OnInit{
       const newsId = params['b_id'];
       // this.newsId = params['b_id'];
 
-      this.getBlogPostDetails(newsId);
+      // this.getBlogPostDetails(newsId);
 
       // Trouver le produit dans la liste en fonction de l'ID
       this.news = this.all_news.find(news => news.news_id === this.newsId);
     });
 
-    this.route.params.subscribe(params => {
-      const slug = params['slug'];
-      this.getBlogPostDetails(slug);
-    });
+    // this.route.params.subscribe(params => {
+    //   const slug = params['slug'];
+    //   this.getBlogPostDetails(slug);
+    // });
+
+    this.blogService.getBlogPostDetails().subscribe(
+      (response) => {
+        if (response && response.length > 0) {
+          const fullPost = response[0];
+          
+          // Contenu complet de l'article
+          this.fullContent = fullPost.content.rendered;
+          
+          // Titre de l'article
+          this.postTitle = fullPost.title.rendered;
+          
+          // Date de publication
+          this.publishDate = fullPost.date;
+          
+          // Image à la une (si disponible)
+          this.featuredImage = fullPost._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+          
+          // Détails de l'auteur
+          this.authorName = fullPost._embedded?.author?.[0]?.name;
+        }
+      }
+    );
+
   }
 
 

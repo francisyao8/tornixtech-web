@@ -31,7 +31,7 @@
             <div class="col-lg-8">
                 <!-- Blog item retrieved from: https://insights.tornixtech.com/  -->
                 <div *ngFor="let post of news" class="card mb-4 rounded-3 shadow-sm border-0">
-                    
+
                     <div class="card-body p-4">
                         <a [routerLink]="['/main/news/blog-post/blog-post-details']">
                             <h5 class="fw-bold mb-3">Technology</h5>
@@ -44,6 +44,7 @@
                             <div class="text-secondary mb-2 small">
                                 <span class="bi-person me-1"> Author :</span>{{ post.author }}
                                 <span class="bi-calendar ms-2 me-1"> Published :</span> {{ post.date }}
+                                <!-- <span class="bi-calendar ms-2 me-1"> Published :</span> {{ post.date:'mediumDate' }} -->
                             </div>
                             <div class="d-flex mb-3 justify-content-end">
                                 <div class="ms-auto">
@@ -122,26 +123,26 @@
                                 <span class="bi-person me-1"> Author :</span>{{ post.author }}
                                 <span class="bi-calendar ms-2 me-1"> Published :</span> {{ post.date }}
                             </div>
-                            <div class="d-flex mb-3 justify-content-end">
+                            <!-- <div class="d-flex mb-3 justify-content-end">
                                 <div class="ms-auto">
                                     <a [routerLink]="['/main/news/blog-post/blog-post-details', post.id]"
                                         class="btn btn-custom-outline-primary btn-sm">
                                         Read more
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-               
+
                 <!--  -->
-                <div class="card-body p-4">
+                <!-- <div class="card-body p-4">
                     <div class="d-flex mb-3">
                         <span class="badge bg-danger me-2">POSTS</span>
                         <span class="badge bg-danger me-2">NEWS</span>
                         <span class="badge bg-danger me-2">ARTICLES</span>
                     </div>
-                </div>
+                </div> -->
                 <!--  -->
                 <br><br>
 
