@@ -83,7 +83,7 @@ export class ProductDetailsComponent implements OnInit{
       product_link: './assets/img/logo-tornixtech/nixlmail-logo.jpeg',
       product_description: 'OnixMail is TornixTech’s proprietary email solution, offering a secure and professional communication platform. Built with reliability and efficiency in mind, it ensures high email deliverability, spam filtering, and encrypted messaging. Whether for business or personal use, OnixMail provides a seamless experience, integrating with major productivity tools to enhance collaboration.',
       categorie: 'Communication',
-      product_website: ''
+      product_website: 'http://onixmail.com/'
     },
     {
       product_id: 't-trackam-010',
