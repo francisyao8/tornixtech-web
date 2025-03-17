@@ -80,10 +80,10 @@ export class ProductDetailsComponent implements OnInit{
     {
       product_id: 't-onixmail-009',
       product_label: 'OnixMail',
-      product_link: './assets/img/logo-tornixtech/nixmail-logo.jpeg',
+      product_link: './assets/img/logo-tornixtech/nixlmail-logo.jpeg',
       product_description: 'OnixMail is TornixTech’s proprietary email solution, offering a secure and professional communication platform. Built with reliability and efficiency in mind, it ensures high email deliverability, spam filtering, and encrypted messaging. Whether for business or personal use, OnixMail provides a seamless experience, integrating with major productivity tools to enhance collaboration.',
       categorie: 'Communication',
-      product_website: ''
+      product_website: 'http://onixmail.com/'
     },
     {
       product_id: 't-trackam-010',
@@ -116,7 +116,23 @@ export class ProductDetailsComponent implements OnInit{
       product_description: 'BlueBus is a modern and user-friendly platform that allows travelers to search, compare, and purchase bus tickets online with ease. Designed to simplify transportation bookings, BlueBus connects users with reliable bus operators, offering seamless reservations and secure payment options.',
       categorie: 'Your Smart Ticketing Solution for Bus Travel',
       product_website: ''
-    }
+    },
+    {
+      product_id: 't-johelp-014',
+      product_label: 'Johelp',
+      product_link: './assets/img/logo-tornixtech/johelp-logo.jpeg',
+      product_description: 'Johelp is a smart service marketplace that connects users with trusted professionals for all their daily needs. Whether you need a plumber, electrician, beauty expert, handyman, or business service, Johelp makes it easy to find, book, and get the job done—fast!',
+      categorie: 'With Johelp, getting help is just a click away!.',
+      product_website: ''
+    },
+    {
+      product_id: 't-maroue-015',
+      product_label: 'Maroue',
+      product_link: './assets/img/logo-tornixtech/maroue-logo.jpeg',
+      product_description: 'Maroue is a modern, hassle-free car booking platform that gives you the freedom to rent and drive at your convenience. Whether you need a car for a quick trip, a business meeting, or a weekend getaway, Maroue provides a seamless experience with a variety of self-drive and chauffeur-driven options.',
+      categorie: 'Maroue - Your Smart Car Booking & Self-Drive Solution',
+      product_website: ''
+    },
   ];
   productId: any;
 

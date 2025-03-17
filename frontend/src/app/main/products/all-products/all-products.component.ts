@@ -30,6 +30,9 @@ export class AllProductsComponent implements OnInit{
     { product_id: 't-my-assets-012', product_label: 'My Assets', product_link: './assets/img/logo-tornixtech/my-assets-logo.jpeg', product_description: 'My Assets is designed to democratize stock market access by making investment management easy, secure, and efficient.', },
     
     { product_id: 't-bluebus-013', product_label: 'BLUEBUS', product_link: './assets/img/logo-tornixtech/bluebus-logo.jpeg', product_description: 'Whether you\'re commuting daily or planning a long journey, BlueBus ensures a smooth and efficient ticketing experience.', },
+    
+    { product_id: 't-johelp-014', product_label: 'Johelp', product_link: './assets/img/logo-tornixtech/johelp-logo.jpeg', product_description: 'Johelp is a smart service marketplace that connects users with trusted professionals for all their daily needs. Whether you need a plumber, electrician, beauty expert, handyman, or business service, Johelp makes it easy to find, book, and get the job done—fast!', },
+    { product_id: 't-maroue-015', product_label: 'Maroue', product_link: './assets/img/logo-tornixtech/maroue-logo.jpeg', product_description: 'Maroue - Your Smart Car Booking & Self-Drive Solution 🚗💨 Maroue is a modern, hassle-free car booking platform that gives you the freedom to rent and drive at your convenience. Whether you need a car for a quick trip, a business meeting, or a weekend getaway, Maroue provides a seamless experience with a variety of self-drive and chauffeur-driven options.', },
 
   ];
   
