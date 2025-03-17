@@ -1,9 +1,9 @@
 from flask_restful import Resource
-from helpers.payment import *
+from helpers.payment_services import *
 from flask import request
 
 
-class PaymentApi(Resource):
+class PaymentServicesApi(Resource):
     def post(self, route):
         if route == 'create_payment':
             return CreatePaymentPlan() 

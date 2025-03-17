@@ -10,7 +10,7 @@ from flask_migrate import Migrate
 from flask import Flask
 from flask_cors import CORS
 
-from ressources.payment import PaymentApi
+from ressources.Payment_Services import PaymentServicesApi
 
 app = Flask(__name__)
 
@@ -30,7 +30,7 @@ db.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
 
-api.add_resource(PaymentApi, '/api/payment/<string:route>', endpoint='all_payment', methods=['GET', 'POST', 'DELETE', 'PATCH'])
+api.add_resource(PaymentServicesApi, '/api/Payment_Services/<string:route>', endpoint='all_payment', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 
 @app.route('/')
 def home():
