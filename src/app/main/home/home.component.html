@@ -50,7 +50,23 @@
 
     <div class="row gy-4">
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item item-cyan position-relative">
+          <div class="icon">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <a [routerLink]="['/main/services']" class="stretched-link">
+            <h3>WebPress</h3>
+          </a>
+          <p>
+            Discover our flexible pricing plans tailored to suit your needs.
+            Whether you’re looking for essential features or premium solutions, we offer transparent and competitive
+            rates to help you get the most value for your investment.
+          </p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item item-cyan position-relative">
           <div class="icon">
             <i class="bi bi-shield-lock"></i>
@@ -66,7 +82,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item item-orange position-relative">
           <div class="icon">
             <i class="bi bi-code-square"></i>
@@ -82,7 +98,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item item-teal position-relative">
           <div class="icon">
             <i class="bi bi-kanban"></i>
@@ -98,7 +114,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <!-- <div class="col-lg-3" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item item-red position-relative">
           <div class="icon">
             <i class="bi bi-diagram-3"></i>
@@ -112,7 +128,9 @@
           </p>
           <a [routerLink]="['/main/services']" class="stretched-link"></a>
         </div>
-      </div><!-- End Service Item -->
+      </div>End Service Item -->
+
+
 
       <a [routerLink]="['/main/services']" class="btn service-btn btn-sm d-block mx-auto text-center">See More</a>
 
@@ -204,6 +222,26 @@
               suit your interests.</span></li>
           <li><i class="bi bi-check"></i><span><strong>Notifications: </strong>Get reminders and updates about your
               bookings</span></li>
+        </ul>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+        <img src="assets/img/logo-tornixtech/flotys-logo.jpeg" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7" data-aos="fade-up">
+        <h3>flotyshub: Intelligent fleet management for optimized mobility</h3>
+        <p>
+          Flotys is an advanced real-time fleet management and tracking solution. Thanks to its high-performance
+          tracking tools and intuitive interface, Flotys enables you to optimize your vehicle management, improve your
+          operational efficiency and reduce your costs.
+        </p>
+        <ul>
+          <li><i class="bi bi-check"></i> <span>Real-time GPS tracking for fluid, responsive management.</span></li>
+          <li><i class="bi bi-check"></i><span> Performance analysis and reporting for informed decision-making.</span>
+          </li>
+          <li><i class="bi bi-check"></i> <span>Route optimization and preventive maintenance tools.</span></li>
         </ul>
       </div>
     </div><!-- Features Item -->

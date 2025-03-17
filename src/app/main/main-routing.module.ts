@@ -8,6 +8,7 @@ import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 import { PaginationComponent } from './include/pagination/pagination.component';
 import { NewsComponent } from './news/news.component';
+import { WebpressComponent } from './webpress/webpress.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'team', component: TeamComponent },
       // { path: 'header', component: HeaderComponent },
       // { path: 'footer', component: FooterComponent },
+      { path: 'pricing', component: WebpressComponent },
       { path: 'pagination', component: PaginationComponent },
       { path: 'news', loadChildren: () => import('./news/news.module').then(m => m.NewsModule) },
     ]
