@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebpressComponent } from './webpress.component';
+import { WebexpressComponent } from './webexpress.component';
 
-describe('WebpressComponent', () => {
-  let component: WebpressComponent;
-  let fixture: ComponentFixture<WebpressComponent>;
+describe('WebexpressComponent', () => {
+  let component: WebexpressComponent;
+  let fixture: ComponentFixture<WebexpressComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WebpressComponent]
+      imports: [WebexpressComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WebpressComponent);
+    fixture = TestBed.createComponent(WebexpressComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'services', pathMatch: 'full'},
       { path: 'services', component: ServicesPageComponent },
       { path: 'webexpress', component: WebexpressComponent },
+      // { path: 'pricing', component: WebpressComponent },
     ]
   },
 ];
@@ -20,3 +21,8 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ServicesRoutingModule { }
+
+
+
+
+      

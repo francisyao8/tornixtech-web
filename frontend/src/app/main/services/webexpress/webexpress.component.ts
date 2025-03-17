@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { PaymentService } from '../services/payment/payment.service';
+import { PaymentService } from '../payment/payment.service';
 
 declare var bootstrap: any;
 
 @Component({
-  selector: 'app-webpress',
+  selector: 'app-webexpress',
   imports: [RouterModule, ReactiveFormsModule, CommonModule],
-  templateUrl: './webpress.component.html',
-  styleUrl: './webpress.component.scss'
+  templateUrl: './webexpress.component.html',
+  styleUrl: './webexpress.component.scss'
 })
-export class WebpressComponent implements OnInit{
+export class WebexpressComponent {
+
   data: any;
   is_loading: boolean = false;
 
@@ -21,7 +22,7 @@ export class WebpressComponent implements OnInit{
   ngOnInit(): void { }
 
   paymentForm: FormGroup = new FormGroup({
-    projet: new FormControl('flowhub', Validators.required),
+    projet: new FormControl('tornixtech', Validators.required),
     firstname: new FormControl(null, Validators.required),
     lastname: new FormControl(null, Validators.required),
     email: new FormControl(null, Validators.required),
