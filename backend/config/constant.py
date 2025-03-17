@@ -1,0 +1,1 @@
+SQL_DB_URL = 'mysql+pymysql://francisyao8:admin_08@localhost/tornixtech'
