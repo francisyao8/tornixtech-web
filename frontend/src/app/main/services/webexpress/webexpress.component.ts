@@ -16,6 +16,7 @@ export class WebexpressComponent {
 
   data: any;
   is_loading: boolean = false;
+  selectedPlan: any = {};
 
   constructor(private paymentservice: PaymentService) { }
 
@@ -27,23 +28,34 @@ export class WebexpressComponent {
     lastname: new FormControl(null, Validators.required),
     email: new FormControl(null, Validators.required),
     mobile: new FormControl(null, Validators.required),
-    country: new FormControl(null, Validators.required),
+    country: new FormControl("Cote D'ivoire", Validators.required),
     city: new FormControl(null, Validators.required),
     plan_title: new FormControl(null, Validators.required),
     amount: new FormControl(null, Validators.required),
-    // description: new FormArray([], Validators.required),
+    description: new FormArray([], Validators.required),
   });
 
   setPlanDetails(title: string, amount: string, description: string) {
+    this.selectedPlan = {
+        title: title,
+        amount: amount,
+        features: description.split(', ')
+    };
+
     this.paymentForm.patchValue({
-      plan_title: title,
-      amount: amount,
-      description: description
+        plan_title: title,
+        amount: amount
+    });
+
+    const descriptionArray = this.paymentForm.get('description') as FormArray;
+    descriptionArray.clear();
+    description.split(', ').forEach((desc: string) => {
+        descriptionArray.push(new FormControl(desc));
     });
   }
 
   onSubmit() {
-    this.is_loading = true
+    this.is_loading = true;
     if (this.paymentForm.valid) {
       let body = this.paymentForm.value;
 
@@ -52,27 +64,21 @@ export class WebexpressComponent {
           this.data = res?.payment_infos || {};
 
           if (res?.status === 'success') {
-              this.onPayement()
-
-          
+              this.onPayement();
           } else {
             console.log('Error:', res);
             this.showErrorToast('Failed to create payment plan.');
-            this.is_loading = false
-
+            this.is_loading = false;
           }
         },
         error: (err: any) => {
           console.log('Error:', err);
-          this.is_loading = false
+          this.is_loading = false;
           this.showErrorToast('Failed to create payment plan.');
-
-
         },
         complete: () => {
           console.log('complete');
-          this.is_loading = false
-
+          this.is_loading = false;
         }
       });
     }
@@ -81,7 +87,6 @@ export class WebexpressComponent {
   resetForms() {
     this.paymentForm.reset();
   }
-
 
   closePaymentModal() {
     this.resetForms();
@@ -127,7 +132,6 @@ export class WebexpressComponent {
         product: this.data?.plan_title,
         amount: this.data?.amount,
         description: this.data?.description,
-
       };
       const paymentId  = body?.payment_id;
 
@@ -135,11 +139,8 @@ export class WebexpressComponent {
         next: (res: any) => {
           console.log('Paiement enregistré avec succès:', res);
           if (res?.status === 'success') {
-           
-
             const redirectUrl = `https://payments.tornixtech.com/payment/summary/${encodeURIComponent(paymentId)}`;
             console.log("Redirection vers :", redirectUrl);
-
             window.location.href = redirectUrl;
           }
         },
@@ -154,5 +155,4 @@ export class WebexpressComponent {
       console.log("Aucune donnée de paiement disponible.");
     }
   }
-
 }

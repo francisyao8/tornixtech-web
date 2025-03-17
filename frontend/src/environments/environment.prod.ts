@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://api.flowhubnetwork.com/'
+    apiUrl: 'https://tornixtech.com/'
   };
   

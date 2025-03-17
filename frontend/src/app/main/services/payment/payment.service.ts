@@ -14,7 +14,7 @@ export class PaymentService {
   constructor(private http: HttpClient,) { }
   
   CreatePaymentPlan(body: any) {
-    return this.http.post(this.apiUrl + "api/payment/create_payment", body)
+    return this.http.post(this.apiUrl + "api/payment_services/create_payment", body)
   }
 
   CreatePaymentGetway(body: any) {
