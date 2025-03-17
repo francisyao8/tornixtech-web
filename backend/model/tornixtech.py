@@ -11,7 +11,7 @@ class Payment_Services(db.Model):
     payment_id = db.Column(db.String(128))
     firstname = db.Column(db.String(128))
     lastname = db.Column(db.String(128))
-    email = db.Column(db.String(128), unique=True)
+    email = db.Column(db.String(128), unique=False)
     mobile = db.Column(db.String(128))
     country = db.Column(db.String(128))
     city = db.Column(db.String(128))
