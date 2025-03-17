@@ -7,6 +7,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 import { PaginationComponent } from './include/pagination/pagination.component';
+import { WebexpressComponent } from './services/webexpress/webexpress.component';
 // import { WebpressComponent } from './webpress/webpress.component';
 
 
@@ -25,7 +26,11 @@ const routes: Routes = [
       // { path: 'header', component: HeaderComponent },
       // { path: 'footer', component: FooterComponent },
       { path: 'pagination', component: PaginationComponent },
+
+      { path: 'webexpress', component: WebexpressComponent },
+
       // { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
+
       { path: 'news', loadChildren: () => import('./news/news.module').then(m => m.NewsModule) },
     ]
   }
