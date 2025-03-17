@@ -16,6 +16,240 @@
 <!-- Featured Services Section -->
 <section id="featured-services" class="featured-services section">
 
-  <router-outlet />
+  <div class="container">
+
+    <!-- <div class="section-head center wt-small-separator-outer">
+          <div class="wt-small-separator site-text-primary">
+            <div class="sep-leaf-left"></div>
+            <div>Our Services</div>
+          </div>
+          <h2 class="wt-title">We Provide Best Services</h2>
+        </div> -->
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item item-cyan position-relative">
+          <div class="icon">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <a [routerLink]="['/services/webexpress']" class="stretched-link">
+            <h3>WebPress</h3>
+          </a>
+          <p>
+            Discover our flexible webexpress plans tailored to suit your needs.
+            Whether you’re looking for essential features or premium solutions, we offer transparent and
+            competitive
+            rates to help you get the most value for your investment.
+          </p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item item-cyan position-relative">
+          <div class="icon">
+            <!-- <i class="bi bi-activity"></i> -->
+            <i class="bi bi-shield-lock"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3>Cyber security</h3>
+              </a> -->
+          <h3 class="stretched-link">Cyber security</h3>
+          <p>
+            Protect your business with our comprehensive cyber security services. We provide risk
+            assessments,
+            vulnerability management, and security solutions to safeguard your digital assets, ensuring
+            compliance and
+            protection against cyber threats.
+          </p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item item-orange position-relative">
+          <div class="icon">
+            <!-- <i class="bi bi-broadcast"></i> -->
+            <i class="bi bi-code-square"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Customized software development</h3>
+              </a> -->
+          <h3 class="stretched-link">Customized software development</h3>
+          <p>
+            Our team creates bespoke software solutions tailored to your specific business needs. We ensure
+            that our
+            development process aligns with your goals, offering scalable, secure, and efficient
+            applications to enhance
+            your operations.
+          </p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item item-teal position-relative">
+          <div class="icon">
+            <i class="bi bi-kanban"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">IT project management</h3>
+              </a> -->
+          <h3 class="stretched-link">IT project management</h3>
+          <p>
+            We provide expert management services for your IT projects, ensuring timely delivery, budget
+            control, and
+            successful implementation.
+            Our approach involves seamless coordination, risk management, and resource allocation to achieve
+            your goals.
+          </p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Systems integration</h3>
+              </a> -->
+          <h3 class="stretched-link">Systems integration</h3>
+          <p>
+            We specialize in integrating various software and hardware systems into a unified, efficient,
+            and scalable
+            solution, ensuring that your infrastructure works harmoniously to support business operations.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <i class="bi bi-hdd-network"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">System & network administration</h3>
+              </a> -->
+          <h3 class="stretched-link">System & network administration</h3>
+          <p>
+            Our team ensures the reliable operation of your IT systems and networks, offering management,
+            optimization,
+            and monitoring services to guarantee seamless performance and security.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <i class="bi bi-pc-display"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Computer fleet management</h3>
+              </a> -->
+          <h3 class="stretched-link">Computer fleet management</h3>
+          <p>
+            We provide comprehensive management of your organization's computer fleet, ensuring optimal
+            performance,
+            regular updates, and proactive maintenance to enhance your IT infrastructure.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Outsourcing</h3>
+              </a> -->
+          <h3 class="stretched-link">Outsourcing</h3>
+          <p>
+            We handle your IT infrastructure and services, providing seamless management and support.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <i class="bi bi-code-square"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Web & Mobile Development</h3>
+              </a> -->
+          <h3 class="stretched-link">Web & Mobile Development</h3>
+          <p>
+            We specialize in developing custom web and mobile applications designed to meet your business
+            needs, improve
+            user engagement, and drive digital transformation.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <!-- <i class="bi bi-bounding-box-circles"></i> -->
+            <i class="bi bi-cloud"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3 class="stretched-link">Cloud computing</h3>
+          </a>
+          <p>
+            We provide tailored cloud computing solutions to help your business scale, enhance
+            collaboration, and
+            optimize resource management while ensuring data security and accessibility.
+          </p>
+          <a href="service-details.html" class="stretched-link"></a>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <!-- <i class="bi bi-bounding-box-circles"></i> -->
+            <i class="bi bi-diagram-2"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">Network design and configuration</h3>
+              </a> -->
+          <h3 class="stretched-link">Network design and configuration</h3>
+          <p>
+            We provide tailored solutions for designing and configuring IT networks to ensure seamless
+            connectivity and
+            optimal performance for your business.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <div class="icon">
+            <!-- <i class="bi bi-bounding-box-circles"></i> -->
+            <i class="bi bi-tools"></i>
+          </div>
+          <!-- <a href="service-details.html" class="stretched-link">
+                <h3 class="stretched-link">IT Maintenance and Support</h3>
+              </a> -->
+          <h3 class="stretched-link">IT Maintenance and Support</h3>
+          <p>
+            We offer comprehensive IT maintenance and support services to ensure the smooth operation of
+            your systems,
+            minimize downtime, and resolve technical issues efficiently.
+          </p>
+          <!-- <a href="service-details.html" class="stretched-link"></a> -->
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
 
 </section><!-- /Featured Services Section -->

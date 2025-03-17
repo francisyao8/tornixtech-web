@@ -1,1 +1,234 @@
-<p>webexpress works!</p>
+<!-- Page Title -->
+<div class="page-title dark-background">
+    <div class="container position-relative">
+        <h1>Pricing</h1>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Pricing</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Explorez nos forfaits de création de sites web adaptés à vos besoins professionnels.</p>
+    </div>
+    <!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row g-4 g-lg-0">
+
+            <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="pricing-item">
+                    <h3>Pack Standard</h3>
+                    <h4>150.000<sup>FCFA</sup></h4>
+                    <ul>
+                        <li><i class="bi bi-check"></i> <span>Site vitrine (5 pages max)</span></li>
+                        <li><i class="bi bi-check"></i> <span>Design moderne & responsive</span></li>
+                        <li><i class="bi bi-check"></i> <span>Hébergement + Domaine inclus (1 an)</span></li>
+                        <li><i class="bi bi-check"></i> <span>Formulaire de contact</span></li>
+                    </ul>
+                    <div class="text-center" style="cursor: pointer;">
+                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                            (click)="setPlanDetails('Pack Standard', '150000', 'Site vitrine (5 pages max), Design moderne & responsive, Hébergement + Domaine inclus (1 an), Formulaire de contact')">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div><!-- End Pricing Item -->
+
+            <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
+                <div class="pricing-item">
+                    <h3>Pack Pro</h3>
+                    <h4>250.000<sup>FCFA</sup></h4>
+                    <ul>
+                        <li><i class="bi bi-check"></i> <span>Tout le Pack Standard +</span></li>
+                        <li><i class="bi bi-check"></i> <span>Blog intégré</span></li>
+                        <li><i class="bi bi-check"></i> <span>Formulaire avancé & WhatsApp intégré</span></li>
+                        <li><i class="bi bi-check"></i> <span>Optimisation SEO de base</span></li>
+                    </ul>
+                    <div class="text-center" style="cursor: pointer;">
+                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                            (click)="setPlanDetails('Pack Pro', '250000', 'Tout le Pack Standard +, Blog intégré, Formulaire avancé & WhatsApp intégré, Optimisation SEO de base')">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div><!-- End Pricing Item -->
+
+            <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="pricing-item">
+                    <h3>Pack E-commerce</h3>
+                    <h4>350.000<sup>FCFA</sup></h4>
+                    <ul>
+                        <li><i class="bi bi-check"></i> <span>Tout le Pack Pro +</span></li>
+                        <li><i class="bi bi-check"></i> <span>Boutique en ligne avec gestion des produits</span></li>
+                        <li><i class="bi bi-check"></i> <span>Paiement en ligne intégré</span></li>
+                        <li><i class="bi bi-check"></i> <span>Tableau de bord pour suivi des ventes</span></li>
+                    </ul>
+                    <div class="text-center" style="cursor: pointer;">
+                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                            (click)="setPlanDetails('Pack E-commerce', '350000', 'Tout le Pack Pro +, Boutique en ligne avec gestion des produits, Paiement en ligne intégré, Tableau de bord pour suivi des ventes')">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div><!-- End Pricing Item -->
+
+            <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="pricing-item">
+                    <h3>Options Supplémentaires</h3>
+                    <h4>350.000<sup>FCFA</sup></h4>
+                    <ul>
+                        <li><i class="bi bi-check"></i> <span>Tout le Pack Pro +</span></li>
+                        <li><i class="bi bi-check"></i> <span>Boutique en ligne avec gestion des produits</span></li>
+                        <li><i class="bi bi-check"></i> <span>Paiement en ligne intégré</span></li>
+                        <li><i class="bi bi-check"></i> <span>Tableau de bord pour suivi des ventes</span></li>
+                    </ul>
+                    <div class="text-center" style="cursor: pointer;">
+                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                            (click)="setPlanDetails('Pack E-commerce', '350000', 'Tout le Pack Pro +, Boutique en ligne avec gestion des produits, Paiement en ligne intégré, Tableau de bord pour suivi des ventes')">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div><!-- End Pricing Item -->
+
+            <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                <div class="pricing-item">
+                    <h3>Options Supplémentaires</h3>
+                    <ul>
+                        <li><i class="bi bi-check"></i> <span>SEO Avancé – 50.000 FCFA</span></li>
+                        <li><i class="bi bi-check"></i> <span>Maintenance & Hébergement annuel – 100.000 FCFA</span>
+                        </li>
+                        <li><i class="bi bi-check"></i> <span>Support + mises à jour techniques</span></li>
+                    </ul>
+                    <div class="text-center" style="cursor: pointer;">
+                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                            (click)="setPlanDetails('Options Supplémentaires', '50000', 'SEO Avancé, Maintenance & Hébergement annuel, Support + mises à jour techniques')">
+                            Plus d'infos
+                        </a>
+                    </div>
+                </div>
+            </div><!-- End Pricing Item -->
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalTitle" aria-hidden="true"
+        (hidden.bs.modal)="closePaymentModal()">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subscribeModalTitle">Demande de devis</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        (click)="closePaymentModal()"></button>
+                </div>
+                <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+                    <div class="modal-body">
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">Forfait</label>
+                                <input type="text" class="form-control bg-light" formControlName="plan_title" readonly>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Montant</label>
+                                <input type="text" class="form-control bg-light" formControlName="amount" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control bg-light" formControlName="description" rows="2"
+                                    readonly></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" class="form-control" formControlName="firstname" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Nom</label>
+                                <input type="text" class="form-control" formControlName="lastname" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">Téléphone</label>
+                                <input type="text" class="form-control" formControlName="mobile" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">Pays</label>
+                                <input type="text" class="form-control" formControlName="country" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">Ville</label>
+                                <input type="text" class="form-control" formControlName="city" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary" *ngIf="!is_loading">Confirmer</button>
+                        <!-- Buttons Spinners -->
+                        <button class="btn btn-primary me-1" type="button" *ngIf="is_loading" disabled>
+                            <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                            Chargement...
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="successToastBody">
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="errorToastBody">
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+</section><!-- /Pricing Section -->
