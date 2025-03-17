@@ -131,7 +131,7 @@ export class WebexpressComponent {
         city: this.data?.city,
         product: this.data?.plan_title,
         amount: this.data?.amount,
-        description: this.data?.description,
+        description: Array.isArray(this.data?.description) ? this.data?.description.join(', ') : this.data?.description
       };
       const paymentId  = body?.payment_id;
 
