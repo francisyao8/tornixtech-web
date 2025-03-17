@@ -11,12 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent implements OnInit {
-  data: any;
-  is_loading: boolean = false;
 
-  constructor(
-    private paymentservice: PaymentService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void { }
 }

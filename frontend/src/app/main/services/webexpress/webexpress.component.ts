@@ -31,7 +31,7 @@ export class WebexpressComponent {
     city: new FormControl(null, Validators.required),
     plan_title: new FormControl(null, Validators.required),
     amount: new FormControl(null, Validators.required),
-    description: new FormArray([], Validators.required),
+    // description: new FormArray([], Validators.required),
   });
 
   setPlanDetails(title: string, amount: string, description: string) {
