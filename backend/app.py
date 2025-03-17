@@ -30,7 +30,7 @@ db.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
 
-api.add_resource(PaymentServicesApi, '/api/Payment_Services/<string:route>', endpoint='all_payment', methods=['GET', 'POST', 'DELETE', 'PATCH'])
+api.add_resource(PaymentServicesApi, '/api/payment_services/<string:route>', endpoint='all_payment', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 
 @app.route('/')
 def home():
