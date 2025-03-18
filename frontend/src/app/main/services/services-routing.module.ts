@@ -6,7 +6,8 @@ import { WebexpressComponent } from './webexpress/webexpress.component';
 
 const routes: Routes = [
   {
-    path: '', component: ServicesPageComponent,
+    path: '',
+    // component: ServicesComponent,
     children: [
       { path: '', redirectTo: 'services-page', pathMatch: 'full'},
       { path: 'services-page', component: ServicesPageComponent },

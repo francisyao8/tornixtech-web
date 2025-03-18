@@ -4,11 +4,10 @@ import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ServicesComponent } from './services/services.component';
+// import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 import { PaginationComponent } from './include/pagination/pagination.component';
-import { WebexpressComponent } from './services/webexpress/webexpress.component';
-// import { WebpressComponent } from './webpress/webpress.component';
+// import { WebexpressComponent } from './services/webexpress/webexpress.component';
 
 
 const routes: Routes = [

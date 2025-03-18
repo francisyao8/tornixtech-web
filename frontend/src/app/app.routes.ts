@@ -12,6 +12,7 @@ export const routes: Routes = [
     { path: 'contact-us', component: ContactUsComponent },
     { path: 'products', component: ProductsComponent },
     // { path: 'services', component: ServicesComponent },
+    // { path: 'services', loadChildren: () => import('./main/services/services.module').then(m => m.ServicesModule) },
     { path: 'services', loadChildren: () => import('./main/services/services.module').then(m => m.ServicesModule) },
     { path: 'team', component: TeamComponent },
 

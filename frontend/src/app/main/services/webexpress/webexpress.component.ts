@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PaymentService } from '../payment/payment.service';
+import { HeaderComponent } from '../../include/header/header.component';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-webexpress',
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  standalone: true,
+  imports: [RouterModule, ReactiveFormsModule, CommonModule, HeaderComponent],
   templateUrl: './webexpress.component.html',
   styleUrl: './webexpress.component.scss'
 })
