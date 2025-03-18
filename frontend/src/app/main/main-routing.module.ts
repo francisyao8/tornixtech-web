@@ -9,6 +9,7 @@ import { TeamComponent } from './team/team.component';
 import { PaginationComponent } from './include/pagination/pagination.component';
 
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsComponent } from './terms/terms.component';
 
 // import { WebexpressComponent } from './services/webexpress/webexpress.component';
 
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'pagination', component: PaginationComponent },
       // { path: 'webexpress', component: WebexpressComponent },
       { path: 'privacy-policy', component: PrivacyPolicyComponent },
+      { path: 'terms', component: TermsComponent },
       { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
       { path: 'news', loadChildren: () => import('./news/news.module').then(m => m.NewsModule) },
     ]
