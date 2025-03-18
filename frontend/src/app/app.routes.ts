@@ -11,10 +11,13 @@ export const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'contact-us', component: ContactUsComponent },
     { path: 'products', component: ProductsComponent },
-    { path: 'services', component: ServicesComponent },
+    // { path: 'services', component: ServicesComponent },
+    { path: 'services', loadChildren: () => import('./main/services/services.module').then(m => m.ServicesModule) },
     { path: 'team', component: TeamComponent },
-          // { path: 'article', component: ArticleDetailComponent },
 
+    
+    // {path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
+    // { path: 'article', component: ArticleDetailComponent },
     // { path: 'news', loadChildren: () => import('./main/news/news.module').then(m => m.NewsModule) },
 
 ];

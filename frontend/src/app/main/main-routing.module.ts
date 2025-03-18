@@ -21,16 +21,13 @@ const routes: Routes = [
       { path: 'about-us', component: AboutComponent },
       { path: 'contact-us', component: ContactUsComponent},
       { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-      { path: 'services', component: ServicesComponent },
+      // { path: 'services', component: ServicesComponent },
       { path: 'team', component: TeamComponent },
       // { path: 'header', component: HeaderComponent },
       // { path: 'footer', component: FooterComponent },
       { path: 'pagination', component: PaginationComponent },
-
-      { path: 'webexpress', component: WebexpressComponent },
-
-      // { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
-
+      // { path: 'webexpress', component: WebexpressComponent },
+      { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
       { path: 'news', loadChildren: () => import('./news/news.module').then(m => m.NewsModule) },
     ]
   }

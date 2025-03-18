@@ -8,10 +8,10 @@ const routes: Routes = [
   {
     path: '', component: ServicesPageComponent,
     children: [
-      { path: '', redirectTo: 'services', pathMatch: 'full'},
-      { path: 'services', component: ServicesPageComponent },
+      { path: '', redirectTo: 'services-page', pathMatch: 'full'},
+      { path: 'services-page', component: ServicesPageComponent },
       { path: 'webexpress', component: WebexpressComponent },
-      // { path: 'pricing', component: WebpressComponent },
+      // { path: 'pricing', component: PricingComponent },
     ]
   },
 ];
@@ -22,7 +22,3 @@ const routes: Routes = [
 })
 export class ServicesRoutingModule { }
 
-
-
-
-      

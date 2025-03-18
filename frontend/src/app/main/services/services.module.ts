@@ -12,10 +12,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ServicesRoutingModule,
-    ServicesRoutingModule,
     MainRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    // ServicesModule,
     // RegisterComponent
   ]
 })
