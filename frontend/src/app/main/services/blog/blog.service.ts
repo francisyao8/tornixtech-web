@@ -7,28 +7,29 @@ import { Observable } from 'rxjs';
 })
 export class BlogService {
 
-  private apiUrl = 'https://insights.tornixtech.com/wp-json/wp/v2/posts'; // URL de l'API REST de WordPress
+  private apiUrl = 'https://insights.tornixtech.com/wp-json/wp/v2/posts'; 
   private articles = 'https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=the-importance-of-custom-middleware-for-modern-app-development';
 
   constructor(private http: HttpClient) { }
 
-  // Méthode pour récupérer les articles du blog
   getPosts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   };
 
-  // // Méthode pour récupérer les détails du blog via une API
-  // getBlogPostDetails(): Observable<any> {
-  //   // const url = `https://insights.tornixtech.com/api/blog-post/${blogId}`; // Exemple d'URL pour récupérer un article spécifique
-  //   // return this.http.get<any>(url);
-  //   return this.http.get(`https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=the-importance-of-custom-middleware-for-modern-app-development`);
-  // }
+  getBlogPostDetails_(slug: string): Observable<any> {
+    return this.http.get<any[]>(`${this.apiUrl}?slug=${slug}&_embed`);
+  }
 
-  // Méthode pour récupérer les détails du blog via une API
   getBlogPostDetails(): Observable<any> {
     // const url = `https://insights.tornixtech.com/api/blog-post/${blogId}`; // Exemple d'URL pour récupérer un article spécifique
     // return this.http.get<any>(url);
-    return this.http.get(this.articles);
+    // return this.http.get(this.articles);
+    return this.http.get<any[]>(`${this.apiUrl}?slug=the-importance-of-custom-middleware-for-modern-app-development&_embed`);
+    // return this.http.get<any[]>(`${this.apiUrl}?slug=${slug}&_embed`)
+  }
+
+  getAuthor(authorId: number): Observable<any> {
+    return this.http.get<any>(`https://insights.tornixtech.com/wp-json/wp/v2/users/${authorId}`);
   }
 
 }

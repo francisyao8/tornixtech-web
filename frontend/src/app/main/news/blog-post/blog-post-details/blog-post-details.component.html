@@ -2,26 +2,19 @@
 <div class="page-title dark-background">
     <div class="container position-relative">
         <h1>All Blog Details</h1>
-        <p>
+        <!-- <p>
             Stay updated with the latest advancements and updates from TornixTech.
             We are constantly working on innovative solutions to meet the evolving needs of our clients.
             Our team is dedicated to sharing insights, trends, and news to help you stay ahead in the fast-paced tech
             world.
             Check back regularly for exciting news and developments.
-        </p>
+        </p> -->
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="index.html">Home</a></li>
-                <!-- <li>
-                    <a [routerLink]="['/main/news/blog-post/blog-post-details']">
-                        News
-                    </a>
-                </li> -->
-                <!-- <li>
-                    <a [routerLink]="['/main/news/blog-post/all-blog-post']">
-                        Blog Post
-                    </a>
-                </li> -->
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a [routerLink]="['/main/news/home']">Home</a></li>
+                <li><a [routerLink]="['/main/news']">News</a></li>
+                <!-- <li><a [routerLink]="['/main/news/blog-post/all-blog-post']">Blog Post</a></li> -->
                 <li class="current">Blog Post Details</li>
             </ol>
         </nav>
@@ -33,20 +26,20 @@
     <div class="container my-5">
         <div class="row">
 
-            <div class="card-body p-4">
+            <div class="col">
+                <div *ngIf="loading" class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
 
-                <h3 class="fw-bold mb-3">Latest news and blog posts</h3>
-                <p>
-                    Stay updated with the latest advancements and updates from TornixTech.
-                    We are constantly working on innovative solutions to meet the evolving needs of our clients.
-                </p>
+                <div *ngIf="error" class="alert alert-danger">
+                    {{ error }}
+                </div>
 
-            </div>
-
-            <div class="col-lg-8">
                 <br>
-               
-                <div class="blog-post-details">
+
+                <div *ngIf="!loading && !error" class="blog-post-details">
                     <!-- Image à la une -->
                     <img *ngIf="featuredImage" [src]="featuredImage" alt="Image de l'article" class="img-fluid mb-4">
                     <!-- <img [src]="featuredImage" alt="Image de l'article"> -->
@@ -57,9 +50,29 @@
 
                     <!-- Informations de l'auteur et de publication -->
                     <div class="blog-post-meta mb-4">
-                        <p>
-                            Publié par : <span class="bi-person me-1"></span>  {{ authorName }} <span class="bi-calendar ms-2 me-1"></span> le : {{ publishDate | date:'mediumDate' }}
-                        </p>
+                        <div class="d-flex align-items-center">
+                            <img *ngIf="authorAvatar" [src]="authorAvatar" class="rounded-circle me-3" width="60"
+                                height="60" alt="Avatar de {{ authorName }}">
+                        </div>
+
+                        <div>
+                            <p>
+                                Author : <span class="bi-person me-1"></span> {{ authorName }} <span
+                                    class="bi-calendar ms-2 me-1"></span> le : {{ publishDate | date:'mediumDate' }}
+                            </p>
+                        </div>
+
+                        <div class="text-muted small">
+                            <span class="d-block">
+                                <span class="bi-calendar me-1"></span>
+                                Publié le: {{ publishDate | date:'mediumDate' }}
+                            </span>
+                            <span *ngIf="modifiedDate !== publishDate" class="d-block mt-1">
+                                <span class="bi-pencil me-1"></span>
+                                Modifié le: {{ modifiedDate | date:'mediumDate' }}
+                            </span>
+                        </div>
+                       
                     </div>
 
                     <!-- Contenu complet de l'article -->
@@ -67,17 +80,27 @@
                     <!-- <div [innerHTML]="fullContent"></div> -->
 
                     <!-- <p>Publié par {{ authorName }} le {{ publishDate | date }}</p> -->
-                    <p>
-                        Publié par : <span class="bi-person me-1"></span>  {{ authorName }} <span class="bi-calendar ms-2 me-1"></span> le : {{ publishDate | date:'mediumDate' }}
-                    </p>
+                    <!-- <p>
+                        Author : <span class="bi-person me-1"></span> {{ authorName }} |
+                        publish Date<span class="bi-calendar ms-2 me-1"></span> : {{ publishDate | date:'mediumDate' }}
+                    </p> -->
                 </div>
-                
-                
-                
 
             </div>
 
-            <!-- <div class="col-lg-4">
+            <div class="blog-post-footer mt-4 pt-3 border-top">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="bi-person me-1"></span> 
+                        {{ authorName }}
+                    </div>
+                    <div class="text-muted small">
+                        Publish : <span class="bi-calendar me-1"></span> {{ publishDate | date:'mediumDate' }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col">
                 <div class="container py-4">
                     <div class="d-flex align-items-center mb-4">
                         <div class="me-3">

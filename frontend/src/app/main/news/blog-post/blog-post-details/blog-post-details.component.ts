@@ -12,12 +12,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './blog-post-details.component.scss'
 })
 export class BlogPostDetailsComponent implements OnInit{
-
+  current_page = 'blog-post-details';
+  
+  // Variables pour l'article
   blogPost: any;
-  news: any = null;
-  article: any;
   loading: boolean = true;
   error: string = '';
+  
+  // Données de l'article
+  authorName: string = '';
+  publishDate: string = '';
+  postTitle: string = '';
+  fullContent: string = '';
+  featuredImage: string = '';
+  newsId: string = '';
+
+  authorAvatar: string = '';
+  modifiedDate: string = '';
+
+  // Données locales
+  news: any = null;
+  article: any;  
+  postContent: any;
+
+
+
 
   all_news = [
     {
@@ -98,16 +117,6 @@ export class BlogPostDetailsComponent implements OnInit{
     // },
   ];
 
-  // newsId: any;
-  newsId: string | null = null
-  postContent: any;
-
-  fullContent: string = '';
-  postTitle: string = '';
-  publishDate: string = '';
-  featuredImage: string = '';
-  authorName: string = '';
-
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -119,52 +128,147 @@ export class BlogPostDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const newsId = params['b_id'];
+
       this.news = this.all_news.find(news => news.news_id === this.newsId);
+
+      // Récupérer les détails depuis l'API WordPress
+      // this.getBlogPostDetails(newsId);
+      this.loadPostFromWordPress(this.newsId);
     });
 
-    this.blogService.getBlogPostDetails().subscribe(
-      (response) => {
-        if (response && response.length > 0) {
-          const fullPost = response[0];
+    // this.blogService.getBlogPostDetails().subscribe(
+    //   (response) => {
+    //     if (response && response.length > 0) {
+    //       const fullPost = response[0];
           
-          // Contenu complet de l'article
-          this.fullContent = fullPost.content.rendered;
+    //       // Contenu complet de l'article
+    //       this.fullContent = fullPost.content.rendered;
           
-          // Titre de l'article
-          this.postTitle = fullPost.title.rendered;
+    //       // Titre de l'article
+    //       this.postTitle = fullPost.title.rendered;
           
-          // Date de publication
-          this.publishDate = fullPost.date;
+    //       // Date de publication
+    //       this.publishDate = fullPost.date;
           
-          // Image à la une (si disponible)
-          this.featuredImage = fullPost._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+    //       // Image à la une (si disponible)
+    //       this.featuredImage = fullPost._embedded?.['wp:featuredmedia']?.[0]?.source_url;
           
-          // Détails de l'auteur
-          this.authorName = fullPost._embedded?.author?.[0]?.name;
-        }
-      }
-    );
+    //       // Détails de l'auteur
+    //       this.authorName = fullPost._embedded?.author?.[0]?.name;
+    //     }
+    //   }
+    // );
 
   }
 
+  loadPostFromWordPress(slug: string): void {
+    this.loading = true;
+    this.error = '';
 
-  getBlogPostDetails(slug: string): void {
-    const url = `https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=${slug}`;
-    this.http.get<any[]>(url).subscribe({
-      next: data => {
-        if (data.length > 0) {
-          this.blogPost = data[0];
+    this.blogService.getBlogPostDetails_(slug).subscribe({
+      next: (data) => {
+        if (data && data.length > 0) {
+          const post = data[0];
+          this.processWordPressPost(data[0]);
         } else {
-          this.error = 'Article non trouvé.';
+          this.error = 'Article non trouvé';
         }
         this.loading = false;
       },
-      error: err => {
-        this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
+      error: (err) => {
+        this.error = 'Erreur lors du chargement de l\'article';
         this.loading = false;
+        console.error('Error loading blog post:', err);
       }
     });
   }
+
+
+  processWordPressPost(post: any): void {
+    // Données de base
+    this.postTitle = post.title?.rendered || '';
+    this.fullContent = post.content?.rendered || '';
+    this.publishDate = post.date || '';
+    this.modifiedDate = post.modified || '';
+
+    
+    // Auteur
+    if (post._embedded?.author?.[0]) {
+      this.authorName = post._embedded.author[0].name;
+    } else if (post.author) {
+      this.blogService.getAuthor(post.author).subscribe({
+        next: (author) => {
+          this.authorName = author.name;
+        },
+        error: (err) => {
+          console.error('Error loading author:', err);
+          this.authorName = 'Auteur inconnu';
+        }
+      });
+    }
+
+     // Avatar de l'auteur
+    if (post._embedded?.author?.[0]?.avatar_urls?.['96']) {
+      this.authorAvatar = post._embedded.author[0].avatar_urls['96'];
+    }
+    
+    // Image à la une
+    if (post._embedded?.['wp:featuredmedia']?.[0]) {
+      this.featuredImage = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    
+    // Stocker l'article complet si besoin
+    this.blogPost = post;
+  }
+
+  // processWordPressPost(post: any): void {
+  //   // Données de base
+  //   this.postTitle = post.title?.rendered || '';
+  //   this.fullContent = post.content?.rendered || '';
+  //   this.publishDate = post.date || '';
+    
+  //   // Auteur
+  //   if (post._embedded?.author?.[0]) {
+  //     this.authorName = post._embedded.author[0].name;
+  //   } else if (post.author) {
+  //     this.blogService.getAuthor(post.author).subscribe({
+  //       next: (author) => {
+  //         this.authorName = author.name;
+  //       },
+  //       error: (err) => {
+  //         console.error('Error loading author:', err);
+  //         this.authorName = 'Auteur inconnu';
+  //       }
+  //     });
+  //   }
+    
+  //   // Image à la une
+  //   if (post._embedded?.['wp:featuredmedia']?.[0]) {
+  //     this.featuredImage = post._embedded['wp:featuredmedia'][0].source_url;
+  //   }
+    
+  //   // Stocker l'article complet si besoin
+  //   this.blogPost = post;
+  // }
+
+  // getBlogPostDetails(slug: string): void {
+  //   const url = `https://insights.tornixtech.com/wp-json/wp/v2/posts?slug=${slug}`;
+  //   this.http.get<any[]>(url).subscribe({
+  //     next: data => {
+  //       if (data.length > 0) {
+  //         this.blogPost = data[0];
+  //         this.processWordPressPost(data[0]);
+  //       } else {
+  //         this.error = 'Article non trouvé.';
+  //       }
+  //       this.loading = false;
+  //     },
+  //     error: err => {
+  //       this.error = 'Une erreur est survenue lors de la récupération de l\'article.';
+  //       this.loading = false;
+  //     }
+  //   });
+  // }
 
   
 
