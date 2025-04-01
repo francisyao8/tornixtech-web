@@ -21,6 +21,8 @@ export class BlogPostDetailsComponent implements OnInit{
   
   // Données de l'article
   authorName: string = '';
+  authors: string[] = [];
+
   publishDate: string = '';
   postTitle: string = '';
   fullContent: string = '';
@@ -207,7 +209,15 @@ export class BlogPostDetailsComponent implements OnInit{
       });
     }
 
-     // Avatar de l'auteur
+    // s\'il y a plusieurs auteurs
+    if (post._embedded?.author) {
+      this.authors = post._embedded.author.map((a: any) => a.name);
+    } else if (post.author) {
+      // Si un seul auteur (ancienne méthode)
+      this.authors = [post._embedded?.author?.[0]?.name || 'Auteur inconnu'];
+    }
+
+    // Avatar de l'auteur
     if (post._embedded?.author?.[0]?.avatar_urls?.['96']) {
       this.authorAvatar = post._embedded.author[0].avatar_urls['96'];
     }
