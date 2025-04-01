@@ -57,21 +57,12 @@
 
                         <div>
                             <p>
-                                Author : <span class="bi-person me-1"></span> {{ authorName }} <span
-                                    class="bi-calendar ms-2 me-1"></span> le : {{ publishDate | date:'mediumDate' }}
+                                Author : <span class="bi-person me-1"></span> {{ authorName }} |
+                                Publish Date : <span class="bi-calendar ms-2 me-1"></span> {{ publishDate | date:'mediumDate' }} | 
+                                Last update : <span class="bi-pencil me-1"></span> {{ modifiedDate | date:'mediumDate' }}
                             </p>
                         </div>
 
-                        <div class="text-muted small">
-                            <span class="d-block">
-                                <span class="bi-calendar me-1"></span>
-                                Publié le: {{ publishDate | date:'mediumDate' }}
-                            </span>
-                            <span *ngIf="modifiedDate !== publishDate" class="d-block mt-1">
-                                <span class="bi-pencil me-1"></span>
-                                Modifié le: {{ modifiedDate | date:'mediumDate' }}
-                            </span>
-                        </div>
                        
                     </div>
 
