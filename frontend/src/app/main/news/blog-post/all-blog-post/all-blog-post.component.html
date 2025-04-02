@@ -1,14 +1,31 @@
-<!-- Page Title -->
+<!-- Exemple pour chaque article dans votre liste -->
+<div *ngFor="let article of all_news" class="col-md-4 mb-4">
+    <div class="card">
+        <img [src]="article.news_img" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ article.news_label }}</h5>
+            <p class="card-text">{{ article.news_content }}</p>
+            <!-- Utilisez le news_id comme slug dans le routerLink -->
+            <a [routerLink]="['/main/news/blog-post', article.news_id]" class="btn btn-primary">
+                Read more
+            </a>
+            <!-- <a [routerLink]="['/main/news/blog-post', article.news_id]">Lire la suite</a> -->
+        </div>
+    </div>
+</div>
+
+<!-- Page Title
 <div class="page-title dark-background">
     <div class="container position-relative">
         <h1>Our News</h1>
         <nav class="breadcrumbs">
             <ol>
                 <li><a href="index.html">Home</a></li>
-                <!-- <li class="current">News</li> -->
+                <li class="current">News</li>
                 <li class="current">All Blog Post</li>
             </ol>
         </nav>
     </div>
-</div><!-- End Page Title -->
-
+</div>
+End Page Title
+ -->

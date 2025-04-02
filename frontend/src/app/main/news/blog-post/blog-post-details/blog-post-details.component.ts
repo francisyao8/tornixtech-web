@@ -131,7 +131,10 @@ export class BlogPostDetailsComponent implements OnInit{
     this.route.params.subscribe((params) => {
       const newsId = params['b_id'];
 
-      this.news = this.all_news.find(news => news.news_id === this.newsId);
+      if (newsId) {
+        this.news = this.all_news.find(news => news.news_id === this.newsId);
+      }
+      
 
       // Récupérer les détails depuis l'API WordPress
       // this.getBlogPostDetails(newsId);
