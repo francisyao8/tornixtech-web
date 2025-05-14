@@ -18,9 +18,18 @@
         }
     },
     "/wp-json": {
-    "target": "https://insights.tornixtech.com",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
-  }         
+        "target": "https://insights.tornixtech.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/finance-api": {
+        "target": "https://finances.tornixtech.com",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/finance-api": "/api/leads"
+        },
+        "logLevel": "debug"
+    }
 }

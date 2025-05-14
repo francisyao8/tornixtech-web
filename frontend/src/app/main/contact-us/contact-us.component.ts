@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ContactService } from '../services/contact/contact.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { EmailService } from '../services/email/email.service';
 
 declare var bootstrap: any;
 
@@ -13,45 +14,63 @@ declare var bootstrap: any;
 })
 export class ContactUsComponent {
 
+  
   isloading: boolean = false;
 
   constructor(
     private contactService: ContactService,
+    private emailService: EmailService,
     private router: Router,
   ) { 
     this.isloading = false;
   }
 
   formdata: FormGroup = new FormGroup({
-    fullname : new FormControl(null, Validators.required),
-    email : new FormControl(null, [Validators.required, Validators.email]),
-    subject : new FormControl(null, Validators.required),
-    message : new FormControl(null, Validators.required),
+    // name: new FormControl('', Validators.required), // Changement de fullname à name
+    fullname : new FormControl('', Validators.required),
+    email : new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/^(?:\+225|225|0)?[0-9]{10}$/)]),
+    company: new FormControl('', Validators.required),
+    notes: new FormControl('', Validators.required),
+    source: new FormControl(window.location.href),
+    pipeline_stage_id: new FormControl(1)
   })
 
   validation() {
+    if (this.formdata.invalid) {
+      this.showErrorToast("Please fill all required fields");
+      return;
+    }
+
+    this.isloading = true;
+
+
     const formData = {
-      fullname: this.formdata.get("fullname")?.value || '',
+      name: this.formdata.get("fullname")?.value || '',
       email: this.formdata.get("email")?.value || '',
-      subject: this.formdata.get("subject")?.value || '',
-      message: this.formdata.get("message")?.value || '',
+      phone: this.formdata.get("phone")?.value || '',
+      company: this.formdata.get("company")?.value || '',
+      notes: this.formdata.get("notes")?.value || '',
+      source: this.formdata.get("source")?.value || '',
+      pipeline_stage_id: 1,
     };
     
-    this.contactService.SendMail(formData).subscribe({
-      next:(res:any)=> {
-        console.log("Message sent successfully :", res);
+    // Email
+    this.emailService.createLead(formData).subscribe({
+      next: (res) => {
+        console.log("Lead created :", res);
         this.showSuccessToast("Your message has been successfully sent!");
         this.formdata.reset();
       },
-      error: (err: any) => {
-        console.log("Error while sending :", err);
-        this.showErrorToast("Message failed to send. Please try again.");
+      error: (err) => {
+        console.error("Lead API error :", err);
+        this.showErrorToast(err.error?.message || "Message failed to send. Please try again.");
       },
-      complete: () => {
-        this.isloading = false;
-        // console.log("contactService match");
-      },
-    })
+      complete: () => { 
+        this.isloading = false 
+      }
+    });
+
   }
 
 
