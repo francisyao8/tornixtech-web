@@ -32,7 +32,8 @@ export class ContactUsComponent {
     phone: new FormControl('', [Validators.required, Validators.pattern(/^(?:\+225|225|0)?[0-9]{10}$/)]),
     company: new FormControl('', Validators.required),
     notes: new FormControl('', Validators.required),
-    source: new FormControl(window.location.href),
+    // source: new FormControl(window.location.href),
+    source: new FormControl('Tornixtech'),
     pipeline_stage_id: new FormControl(1)
   })
 
@@ -51,9 +52,26 @@ export class ContactUsComponent {
       phone: this.formdata.get("phone")?.value || '',
       company: this.formdata.get("company")?.value || '',
       notes: this.formdata.get("notes")?.value || '',
-      source: this.formdata.get("source")?.value || '',
+      // source: this.formdata.get("source")?.value || '',
+      source: 'Tornixtech',
       pipeline_stage_id: 1,
     };
+
+    // this.contactService.SendMail(formData).subscribe({
+    //   next:(res:any)=> {
+    //     console.log("Message sent successfully :", res);
+    //     this.showSuccessToast("Your message has been successfully sent!");
+    //     this.formdata.reset();
+    //   },
+    //   error: (err: any) => {
+    //     console.log("Error while sending :", err);
+    //     this.showErrorToast("Message failed to send. Please try again.");
+    //   },
+    //   complete: () => {
+    //     this.isloading = false;
+    //     // console.log("contactService match");
+    //   },
+    // })
     
     // Email
     this.emailService.createLead(formData).subscribe({
