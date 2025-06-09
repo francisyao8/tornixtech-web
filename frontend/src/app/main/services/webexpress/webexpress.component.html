@@ -7,7 +7,7 @@
         <p>We Provide Best Services</p>
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="current">Webexpress</li>
             </ol>
         </nav>
@@ -46,7 +46,7 @@
                     </ul>
                     <div class="text-center" style="cursor: pointer;">
                         <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="setPlanDetails('Standard Pack', '150000', 'Showcase site (up to 5 pages), Modern & responsive design, Hosting + Domain included (1 year), Contact form')">
+                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Standard Pack', '150000', 'Showcase site (up to 5 pages), Modern & responsive design, Hosting + Domain included (1 year), Contact form')">
                             Buy Now
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                     </ul>
                     <div class="text-center" style="cursor: pointer;">
                         <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="setPlanDetails('Pro Pack', '250000', 'All features of the Standard Pack +, Integrated blog, Advanced contact form & WhatsApp integration, Basic SEO optimization')">
+                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Pro Pack', '250000', 'All features of the Standard Pack +, Integrated blog, Advanced contact form & WhatsApp integration, Basic SEO optimization')">
                             Buy Now
                         </a>
                     </div>
@@ -92,7 +92,7 @@
                     </ul>
                     <div class="text-center" style="cursor: pointer;">
                         <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="setPlanDetails('Pack E-commerce', '350000', 'All features of the Pro Pack +, Online store with product management, Online payment integration, Dashboard for sales tracking')">
+                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Pack E-commerce', '350000', 'All features of the Pro Pack +, Online store with product management, Online payment integration, Dashboard for sales tracking')">
                             Buy Now
                         </a>
                     </div>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" *ngIf="!is_loading">Confirm</button>
+                        <button type="submit" (click)="triggerGtag('quote_requested','Form Submitted');" class="btn btn-primary" *ngIf="!is_loading">Confirm</button>
                         <!-- Buttons Spinners -->
                         <button class="btn btn-primary me-1" type="button" *ngIf="is_loading" disabled>
                             <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
