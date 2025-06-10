@@ -6,13 +6,21 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } fr
 import { RouterModule } from '@angular/router';
 import { PaymentService } from '../payment/payment.service';
 import { HeaderComponent } from '../../include/header/header.component';
+import { FooterComponent } from '../../include/footer/footer.component';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-webexpress',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule, HeaderComponent],
+  imports: [
+    RouterModule, 
+    ReactiveFormsModule, 
+    CommonModule, 
+    HeaderComponent,
+    FooterComponent,
+    // ServicesModule,
+  ],
   templateUrl: './webexpress.component.html',
   styleUrl: './webexpress.component.scss'
 })
