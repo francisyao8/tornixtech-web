@@ -11,6 +11,7 @@
 
 .head-title{
   font-weight: bold;
+  color: #fff;
 }
 
 .pricing h3 {
@@ -181,7 +182,6 @@ ul {
 }
 
 li::before {
-  content: "✔️ ";
   margin-right: 8px;
 }
 
