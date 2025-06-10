@@ -5,7 +5,8 @@
     <div class="container position-relative">
         <h1>Offre spéciale</h1>
         <p class="wt-title">
-            Créez votre site web PRO en 48h – pour seulement <br>
+            Créez votre site web PRO en 48h – pour seulement <span class="highlight">49.000 FCFA</span> <br>
+            Un site rapide, professionnel, 100% adapté à vos besoins.
         </p>
         <nav class="breadcrumbs">
             <ol>
@@ -15,16 +16,6 @@
         </nav>
     </div>
 </div><!-- End Page Title -->
-
-<section id="hero-subsection" class="featured-services section">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h1>Créez votre site web PRO en 48h – pour seulement <span class="highlight">49.000 FCFA</span></h1>
-        <p>Un site rapide, professionnel, 100% adapté à vos besoins.</p>
-      </div>
-    </div>
-    
-</section>
 
 <!-- Pricing Section -->
 <section id="pricing" class="pricing section">
@@ -41,122 +32,81 @@
     <!-- End Section Title -->
 
     <div class="container">
+    <div class="row g-4 g-lg-0">
 
-        <div class="row g-4 g-lg-0">
+        <!-- Pack Mini -->
+        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+                <h3>Mini</h3>
+                <p>1 page web vitrine</p>
+                <h4>49.000 <sup>FCFA</sup></h4>
 
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pricing-item">
-                    <h3>Mini</h3>
-                    <p>
-                        1 page web vitrine 49.000 <sup>FCFA</sup>
-                    </p>
-
-                    <ul>
-                        <li>1 page web professionnelle et design</li>
-                        <li>Nom de domaine .com offert la 1ère année</li>
-                        <li>Formulaire de contact ou bouton WhatsApp</li>
-                        <li>Livraison garantie en 48h</li>
-                        <li>Support client 7j/7</li>
-                    </ul>
-                    <div class="text-center" style="cursor: pointer;">
-                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Standard Pack', '49.000', 'Showcase site (up to 5 pages), Modern & responsive design, Hosting + Domain included (1 year), Contact form')">
-                            Buy Now
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Pricing Item -->
-
-            <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
-                <div class="pricing-item">
-                    <h3>Standard</h3>
-                    <p>3 pages (Accueil, À propos, Contact)</p>
-                    <p class="price">89.000 FCFA</p>
-
-                    <!-- <ul>
-                        <li><i class="bi bi-check"></i> <span>Tout le Pack Standard +</span></li>
-                        <li><i class="bi bi-check"></i> <span>Blog intégré</span></li>
-                        <li><i class="bi bi-check"></i> <span>Formulaire avancé & WhatsApp intégré</span></li>
-                        <li><i class="bi bi-check"></i> <span>Optimisation SEO de base</span></li>
-                        <li><i class="bi bi-check"></i> <span>All features of the Standard Pack +</span></li>
-                        <li><i class="bi bi-check"></i> <span>Integrated blog</span></li>
-                        <li><i class="bi bi-check"></i> <span>Advanced contact form & WhatsApp integration</span></li>
-                        <li><i class="bi bi-check"></i> <span>Basic SEO optimization</span></li>
-                    </ul> -->
-                    <div class="text-center" style="cursor: pointer;">
-                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Pro Pack', '250000', 'All features of the Standard Pack +, Integrated blog, Advanced contact form & WhatsApp integration, Basic SEO optimization')">
-                            Buy Now
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Pricing Item -->
-
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="pricing-item">
-                    <h3>Business</h3>
-                    <p>Site complet + blog ou boutique</p>
-                     <p class="price">149.000 FCFA</p>
-                    <!-- <h4>350.000<sup>FCFA</sup></h4> -->
-                    <!-- <ul>
-                        <li><i class="bi bi-check"></i> <span>Tout le Pack Pro +</span></li>
-                        <li><i class="bi bi-check"></i> <span>Boutique en ligne avec gestion des produits</span></li>
-                        <li><i class="bi bi-check"></i> <span>Paiement en ligne intégré</span></li>
-                        <li><i class="bi bi-check"></i> <span>Tableau de bord pour suivi des ventes</span></li>
-                        <li><i class="bi bi-check"></i> <span>All features of the Pro Pack +</span></li>
-                        <li><i class="bi bi-check"></i> <span>Online store with product management</span></li>
-                        <li><i class="bi bi-check"></i> <span>Online payment integration</span></li>
-                        <li><i class="bi bi-check"></i> <span>Dashboard for sales tracking</span></li>
-                    </ul> -->
-                    <div class="text-center" style="cursor: pointer;">
-                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Pack E-commerce', '89.000', 'All features of the Pro Pack +, Online store with product management, Online payment integration, Dashboard for sales tracking')">
-                            Buy Now
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Pricing Item -->
-
-            <!-- <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="pricing-item">
-                    <h3>Options Supplémentaires</h3>
-                    <h4>350.000<sup>FCFA</sup></h4>
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>Tout le Pack Pro +</span></li>
-                        <li><i class="bi bi-check"></i> <span>Boutique en ligne avec gestion des produits</span></li>
-                        <li><i class="bi bi-check"></i> <span>Paiement en ligne intégré</span></li>
-                        <li><i class="bi bi-check"></i> <span>Tableau de bord pour suivi des ventes</span></li>
-                    </ul>
-                    <div class="text-center" style="cursor: pointer;">
-                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="setPlanDetails('Pack E-commerce', '350000', 'Tout le Pack Pro +, Boutique en ligne avec gestion des produits, Paiement en ligne intégré, Tableau de bord pour suivi des ventes')">
-                            Buy Now
-                        </a>
-                    </div>
+                <ul>
+                    <li><i class="bi bi-check"></i> <span>1 page web professionnelle et design</span></li>
+                    <li><i class="bi bi-check"></i> <span>Nom de domaine .com offert la 1ère année</span></li>
+                    <li><i class="bi bi-check"></i> <span>Formulaire de contact ou bouton WhatsApp</span></li>
+                    <li><i class="bi bi-check"></i> <span>Livraison garantie en 48h</span></li>
+                    <li><i class="bi bi-check"></i> <span>Support client 7j/7</span></li>
+                </ul>
+                <div class="text-center" style="cursor: pointer;">
+                    <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                        (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Mini Pack', '49.000', 'Showcase site (1 page), Modern & responsive design, Hosting + Domain included (1 year), Contact form')">
+                        Commander maintenant
+                    </a>
                 </div>
             </div>
+        </div><!-- End Pricing Item -->
 
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="400">
-                <div class="pricing-item">
-                    <h3>Options Supplémentaires</h3>
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>SEO Avancé – 50.000 FCFA</span></li>
-                        <li><i class="bi bi-check"></i> <span>Maintenance & Hébergement annuel – 100.000 FCFA</span>
-                        </li>
-                        <li><i class="bi bi-check"></i> <span>Support + mises à jour techniques</span></li>
-                    </ul>
-                    <div class="text-center" style="cursor: pointer;">
-                        <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
-                            (click)="setPlanDetails('Options Supplémentaires', '50000', 'SEO Avancé, Maintenance & Hébergement annuel, Support + mises à jour techniques')">
-                            Plus d'infos
-                        </a>
-                    </div>
+        <!-- Pack Standard (Featured) -->
+        <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+                <h3>Standard</h3>
+                <p>3 pages (Accueil, À propos, Contact)</p>
+                <h4>89.000 <sup>FCFA</sup></h4>
+
+                <ul>
+                    <li><i class="bi bi-check"></i> <span>Site web 3 pages professionnelles</span></li>
+                    <li><i class="bi bi-check"></i> <span>Design moderne et responsive</span></li>
+                    <li><i class="bi bi-check"></i> <span>Nom de domaine .com offert</span></li>
+                    <li><i class="bi bi-check"></i> <span>Formulaire de contact avancé</span></li>
+                    <li><i class="bi bi-check"></i> <span>Intégration WhatsApp</span></li>
+                    <li><i class="bi bi-check"></i> <span>Optimisation SEO de base</span></li>
+                </ul>
+                <div class="text-center" style="cursor: pointer;">
+                    <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                        (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Standard Pack', '89.000', 'Website 3 pages, Modern & responsive design, Domain included, Advanced contact form, WhatsApp integration, Basic SEO')">
+                        Commander maintenant
+                    </a>
                 </div>
-            </div> -->
+            </div>
+        </div><!-- End Pricing Item -->
 
-        </div>
+        <!-- Pack Business -->
+        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="pricing-item">
+                <h3>Business</h3>
+                <p>Site complet + blog ou boutique</p>
+                <h4>149.000 <sup>FCFA</sup></h4>
+
+                <ul>
+                    <li><i class="bi bi-check"></i> <span>Tout le Pack Standard +</span></li>
+                    <li><i class="bi bi-check"></i> <span>Blog intégré ou boutique en ligne</span></li>
+                    <li><i class="bi bi-check"></i> <span>Gestion des produits</span></li>
+                    <li><i class="bi bi-check"></i> <span>Paiement en ligne intégré</span></li>
+                    <li><i class="bi bi-check"></i> <span>Tableau de bord pour suivi</span></li>
+                    <li><i class="bi bi-check"></i> <span>SEO avancé</span></li>
+                </ul>
+                <div class="text-center" style="cursor: pointer;">
+                    <a class="buy-btn" data-bs-toggle="modal" data-bs-target="#subscribeModal"
+                        (click)="triggerGtag('open_offer','Open Offer'); setPlanDetails('Business Pack', '149.000', 'All Standard Pack features, Integrated blog or online store, Product management, Online payment, Sales dashboard, Advanced SEO')">
+                        Commander maintenant
+                    </a>
+                </div>
+            </div>
+        </div><!-- End Pricing Item -->
 
     </div>
+</div>
 
 
     <!-- Modal -->
@@ -301,3 +251,7 @@
 </section>
 
 <app-footer></app-footer>
+
+<a href="https://wa.me/2250700000000?text=Bonjour%20TornixTech,%20je%20souhaite%20créer%20un%20site%20WebExpress" class="floating-whatsapp">
+    💬
+</a>
