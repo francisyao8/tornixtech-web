@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
-import { Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PaymentService } from '../payment/payment.service';
@@ -17,16 +17,19 @@ declare var bootstrap: any;
   templateUrl: './webexpress.component1.html',
   styleUrl: './webexpress.component1.scss'
 })
-export class WebexpressComponent {
+export class WebexpressComponent implements OnInit, AfterViewInit, OnDestroy {
 
   data: any;
   is_loading: boolean = false;
   selectedPlan: any = {};
+  private modalInstance: any;
 
   constructor(
     private paymentservice: PaymentService,
-    private meta: Meta, private title: Title
-    ) { }
+    private meta: Meta, 
+    private title: Title,
+    private cdr: ChangeDetectorRef,
+  ) { }
 
   ngOnInit(): void {
     this.title.setTitle('WebExpress by TornixTech – Create Your Website Fast');
@@ -49,8 +52,17 @@ export class WebexpressComponent {
       { name: 'twitter:description', content: 'Modern, mobile-friendly websites built fast. Try WebExpress today.' },
       { name: 'twitter:image', content: 'https://tornixtech.com/assets/webexpress-banner.png' }
     ]);
-
+    
    }
+
+  ngAfterViewInit(): void {
+    if (typeof (window as any).initializePageScripts === 'function') {
+      (window as any).initializePageScripts();
+    }
+  }
+  ngOnDestroy(): void {
+    
+  }
 
   paymentForm: FormGroup = new FormGroup({
     projet: new FormControl('tornixtech', Validators.required),
@@ -178,6 +190,7 @@ export class WebexpressComponent {
           if (res?.status === 'success') {
             const redirectUrl = `https://payments.tornixtech.com/payment/summary/${encodeURIComponent(paymentId)}`;
             console.log("Redirection vers :", redirectUrl);
+            
             window.location.href = redirectUrl;
           }
         },
